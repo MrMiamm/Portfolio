@@ -8,30 +8,57 @@
     <title>William CHERON Portfolio</title>
 </head>
 <body>
-    <nav class="menu_nav">
-        <ul>
-            <li><a href="#">Accueil</a></li>
-            <li><a href="">Compétences</a></li>
-            <li><a href="">Projets</a></li>
-            <li><a href="">Contact</a></li>
-        </ul>
-    </nav>
-
+    <header>
+        <nav class="menu_nav">
+            <ul>
+                <li><a href="#accueil">Accueil</a></li>
+                <li><a href="#competences">Compétences</a></li>
+                <li><a href="#projets">Projets</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    
     <main>
-        <section>
-            <div>
-                <img src="img/ma_photo.png" alt="Une photo de moi" width="200px" height="200px">
+        <section id="accueil">
+            <div>   
                 <div>
-                    <p>Incididunt laborum veniam dolor sit. Fugiat veniam esse cupidatat nostrud. Proident et cupidatat nulla aliquip consectetur veniam laborum tempor magna nisi mollit magna aute dolor. Nisi elit excepteur pariatur et consectetur. Cillum ex officia incididunt voluptate tempor aute nulla esse occaecat fugiat sint aliqua ex adipisicing. Deserunt exercitation nostrud enim aute ex.</p>
-                    <nav>
-                        <ul>
-                            <li><a href="#">Télécharger mon CV</a></li>
-                            <li><a href="#contact">Me contacter</a></li>
-                        </ul>
-                    </nav>
+                    <img src="img/ma_photo.png" alt="Une photo de moi" width="250px" height="250px">
+                    <div>
+                        <p>Bonjour, je m'appelle William CHERON !<br>Je suis actuellement étudiant en <a href="https://iut-lannion.univ-rennes.fr/informatique">BUT Informatique</a> à l'<a href="https://iut-lannion.univ-rennes.fr">IUT de Lannion</a>.<br>J'aime le codage et j'aime aussi jouer du piano.<br>À long therme j'aimerai être développeur logiciel ou développeur FullStack !</p>
+                    </div>
+                </div>
+                <nav>
+                    <ul>
+                        <li class="big-button"><a href="#">Télécharger mon CV</a></li>
+                        <li class="big-button"><a href="#contact">Me contacter</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </section>
+        <section id="competences">
+            <h1>Compétences</h1>
+        </section>
+        <section id="projets">
+            <h1>Projets</h1>
+            <div>
+                <div class="projet">
+                    <h2>Puissance 4</h2>
+                    <img src="img/puissance4.png" alt="Puissance4">
+                    <p>Puissance 4 réalisé en C, s'executant dans le terminal.</p>
+                    <a class="see-button" href="projects/puissance4.html"><div>En savoir plus</div></a>
                 </div>
             </div>
         </section>
     </main>
+
+    <footer id="contact">
+
+    </footer>
+    <script>
+        window.addEventListener('scroll', () => {
+            console.log("Scrolled");
+        });
+    </script>
 </body>
 </html>

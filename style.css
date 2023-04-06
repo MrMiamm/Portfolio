@@ -1,14 +1,235 @@
+/*****************************************************/
+/*Main Things*/
 *{
     margin: 0;
     padding: 0;
+    scroll-behavior: smooth;
+}
+
+main{
+    scroll-snap-type:y mandatory;
+    overflow-y: scroll;
+    height:100vh;
+    color: #fff;
+}
+
+main section{
+    margin-top: -6em;
+    margin-bottom: 6em;
+}
+
+::selection{
     background-color: #23272a;
     color: #fff;
 }
 
-.menu_nav{
-    width: 100%;
+.see-button{
+    display: flex;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    background-image: linear-gradient(135deg,#1af4b7, #1db68b);
+    border-radius: 30px;
+    color: #1db68b;
+    font-size: 24px;
+    text-decoration: none;
+    padding: 15px 30px;
+    transition: all 300ms ease-in-out;
+    z-index: 5;
 }
 
-.menu_nav > ul > li{
-    display: inline-flex;
+.see-button::before{
+    content: '';
+    display: block;
+    height: calc(100% - calc(2px * 2));
+    width: calc(100% - calc(2px * 2));
+    position: absolute;
+    background-color: #fff;
+    top: 2px;
+    left: 2px;
+    border-radius: calc(30px - 2px);
+    z-index: -1;
+}
+
+.see-button:hover{
+    transform: translateY(-0.1em);
+    color: #fff;
+}
+
+.see-button:hover::before{
+    animation-name: see-button-anim;
+    animation-duration: 300ms;
+    animation-iteration-count: 1;
+    background-color: #ffffff00;
+}
+
+@keyframes see-button-anim {
+    from{
+        background-color: #fff;
+    }
+
+    to{
+        background-color: #ffffff00;
+    }
+}
+
+.see-button::before:hover{
+    
+}
+
+/*****************************************************/
+/*Nav bar*/
+
+header{
+    position: fixed;
+    width: 50%;
+    font-size: 32px;
+    background-color: black;
+    border-bottom-right-radius: 50px;
+}
+
+header.sticky{
+    font-size: 64px;
+}
+
+.menu_nav > ul{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    line-height: 3em;
+    width: 100%;
+    list-style: none;
+}
+
+.menu_nav a{
+    color: #fff;
+    text-decoration: none;
+}
+
+.menu_nav {
+    margin-left: 1em;
+    margin-right: 1em;
+}
+
+/*****************************************************/
+/*Accueil*/
+
+#accueil{
+    position: static;
+    z-index: 1;
+    background-image: linear-gradient(135deg,#0fc2e3,blue);
+    height: 90vh;
+    border-radius: 0% 0% 30% 30% / 0% 0% 30% 30% ;
+}
+
+#accueil > div{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 6em;
+    padding-top: 9em;
+}
+
+#accueil > div > div{
+    display: flex;
+    flex-direction: row;
+    width: 80%;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+#accueil > div > div > div{
+    background-color: #fff;
+    color: blue;
+    border-radius: 2em 3em;
+    padding: 1.5em;
+    font-size: 24px;
+    width: 40%;
+    height:fit-content;
+}
+
+#accueil img{
+    display: block;
+    border-radius: 50%;
+    height: 15em;
+    width: 15em;
+}
+
+#accueil nav > ul{
+    margin-left: 13em;
+    margin-top: 2em;
+    display: flex;
+    flex-direction: row;
+    list-style: none;
+    justify-content: space-evenly;
+    width: 20em;
+}
+
+#accueil nav a{
+    text-decoration: none;
+    color: #fff;
+}
+
+/*****************************************************/
+/*Competences*/
+
+#competences{
+    padding: 6em 4em;
+    z-index: 2;
+    background-color: #fff;
+    height: 100vh; 
+}
+
+#competences h1{
+    font-size: 48px;
+    color: #1db68b;
+}
+
+/*****************************************************/
+/*Projets*/
+
+#projets{
+    z-index: 3;
+    padding: 6em 4em;
+    background-image: linear-gradient(-45deg,#0fc2e3,blue);
+    min-height: 100vh;
+}
+
+#projets h1{
+    font-size: 48px;
+}
+
+.projet{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 2em;
+    width: 10em;
+    padding: 2em;
+    background-color: #fff;
+    color: #1db68b;
+    border-radius: 2em 3em;
+    font-size: 24px;
+    text-align: center;
+}
+
+.projet h2{
+    font-size: 32px;
+}
+
+.projet p{
+    margin: 1em;
+}
+
+.projet img{
+    border-radius: 50%;
+    width: 50%;
+    height: 50%;
+}
+
+/*****************************************************/
+/*Footer - Contact*/
+
+body > footer{
+    z-index: 4;
 }
