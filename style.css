@@ -6,16 +6,12 @@
     scroll-behavior: smooth;
 }
 
-main{
-    scroll-snap-type:y mandatory;
-    overflow-y: scroll;
-    height:100vh;
-    color: #fff;
-}
-
-main section{
-    margin-top: -6em;
-    margin-bottom: 6em;
+body{
+    position: absolute;
+    top: 0;
+    background-color: #23272a;
+    width: 100%;
+    min-height: 100vh;
 }
 
 ::selection{
@@ -73,10 +69,6 @@ main section{
     }
 }
 
-.see-button::before:hover{
-    
-}
-
 /*****************************************************/
 /*Nav bar*/
 
@@ -84,8 +76,9 @@ header{
     position: fixed;
     width: 50%;
     font-size: 32px;
-    background-color: black;
     border-bottom-right-radius: 50px;
+    z-index: 1000;
+    top: 0;
 }
 
 header.sticky{
@@ -115,9 +108,9 @@ header.sticky{
 /*Accueil*/
 
 #accueil{
-    position: static;
     z-index: 1;
     background-image: linear-gradient(135deg,#0fc2e3,blue);
+    width: 100%;
     height: 90vh;
     border-radius: 0% 0% 30% 30% / 0% 0% 30% 30% ;
 }
@@ -126,8 +119,7 @@ header.sticky{
     display: flex;
     align-items: center;
     flex-direction: column;
-    margin-top: 6em;
-    padding-top: 9em;
+    padding-top: 15%;
 }
 
 #accueil > div > div{
@@ -176,11 +168,24 @@ header.sticky{
 #competences{
     padding: 6em 4em;
     z-index: 2;
-    background-color: #fff;
-    height: 100vh; 
+    height: 100vh;
 }
 
 #competences h1{
+    font-size: 48px;
+    color: #1db68b;
+}
+
+/*****************************************************/
+/*Formations*/
+
+#formations{
+    padding: 6em 4em;
+    color: #fff;
+    height: 100vh;
+}
+
+#formations h1{
     font-size: 48px;
     color: #1db68b;
 }
@@ -193,6 +198,7 @@ header.sticky{
     padding: 6em 4em;
     background-image: linear-gradient(-45deg,#0fc2e3,blue);
     min-height: 100vh;
+    color: #fff;
 }
 
 #projets h1{
@@ -231,5 +237,9 @@ header.sticky{
 /*Footer - Contact*/
 
 body > footer{
+    position: sticky;
+    top: 100%;
+    min-height: 20vh;
     z-index: 4;
+    background-color: #23272a;
 }
