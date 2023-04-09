@@ -8,10 +8,9 @@
     animation-delay: 1s;
 }
 
-main{
-    overflow-y: hidden;
-    height:100vh;
+body{
     background-image: linear-gradient(135deg,#0fc2e3,blue);
+    height: calc(100vh - 6em);
 }
 
 ::selection{
@@ -45,6 +44,7 @@ header{
     position: fixed;
     width: 50%;
     font-size: 32px;
+    top: 0;
 }
 
 header.sticky{
