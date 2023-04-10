@@ -59,6 +59,24 @@ body{
     background-color: #ffffff00;
 }
 
+.reverse{
+    background-color: #fff;
+    color: #fff;
+}
+
+.reverse:hover{
+    color: #1db68b;
+}
+
+.reverse::before{
+    background-image: linear-gradient(135deg,#1af4b7, #1db68b);
+}
+
+.reverse:hover::before{
+    background: #fff;
+    animation-name: see-button-reverse-anim;
+}
+
 @keyframes see-button-anim {
     from{
         background-color: #fff;
@@ -66,6 +84,16 @@ body{
 
     to{
         background-color: #ffffff00;
+    }
+}
+
+@keyframes see-button-reverse-anim {
+    from{
+        background-color: #ffffff00;
+    }
+
+    to{
+        background-color: #fff;
     }
 }
 
@@ -147,19 +175,14 @@ header.sticky{
     width: 15em;
 }
 
-#accueil nav > ul{
-    margin-left: 13em;
+#accueil nav ul{
+    margin-left: 14em;
     margin-top: 2em;
     display: flex;
     flex-direction: row;
     list-style: none;
     justify-content: space-evenly;
-    width: 20em;
-}
-
-#accueil nav a{
-    text-decoration: none;
-    color: #fff;
+    width: 100%; 
 }
 
 /*****************************************************/
