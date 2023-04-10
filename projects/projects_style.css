@@ -106,51 +106,12 @@ section > div > img{
 }
 
 .other{
-
+    margin-left: 6em;
 }
 
-#accueil > div{
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    margin-top: 6em;
-    padding-top: 9em;
-}
-
-#accueil > div > div{
-    display: flex;
-    flex-direction: row;
-    width: 80%;
-    justify-content: space-evenly;
-    align-items: center;
-}
-
-#accueil > div > div > div{
-    background-color: #fff;
-    color: blue;
-    border-radius: 2em 3em;
-    padding: 1.5em;
-    font-size: 24px;
+.details{
     width: 50%;
-    height:fit-content;
-}
-
-#accueil img{
-    display: block;
-    border-radius: 50%;
-    height: 15em;
-    width: 15em;
-}
-
-#accueil nav > ul{
     display: flex;
     flex-direction: row;
-    list-style: none;
     justify-content: space-evenly;
-    width: 20em;
-}
-
-#accueil nav a{
-    text-decoration: none;
-    color: #fff;
 }

@@ -1,0 +1,77 @@
+.see-button{
+    display: flex;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    background-image: linear-gradient(135deg,#1af4b7, #1db68b);
+    border-radius: 30px;
+    color: #1db68b;
+    font-size: 24px;
+    text-decoration: none;
+    padding: 15px 30px;
+    transition: all 300ms ease-in-out;
+    z-index: 5;
+}
+
+.see-button::before{
+    content: '';
+    display: block;
+    height: calc(100% - calc(2px * 2));
+    width: calc(100% - calc(2px * 2));
+    position: absolute;
+    background-color: #fff;
+    top: 2px;
+    left: 2px;
+    border-radius: calc(30px - 2px);
+    z-index: -1;
+}
+
+.see-button:hover{
+    transform: translateY(-0.1em);
+    color: #fff;
+}
+
+.see-button:hover::before{
+    animation-name: see-button-anim;
+    animation-duration: 300ms;
+    animation-iteration-count: 1;
+    background-color: #ffffff00;
+}
+
+.reverse{
+    background-color: #fff;
+    color: #fff;
+}
+
+.reverse:hover{
+    color: #1db68b;
+}
+
+.reverse::before{
+    background-image: linear-gradient(135deg,#1af4b7, #1db68b);
+}
+
+.reverse:hover::before{
+    background: #fff;
+    animation-name: see-button-reverse-anim;
+}
+
+@keyframes see-button-anim {
+    from{
+        background-color: #fff;
+    }
+
+    to{
+        background-color: #ffffff00;
+    }
+}
+
+@keyframes see-button-reverse-anim {
+    from{
+        background-color: #ffffff00;
+    }
+
+    to{
+        background-color: #fff;
+    }
+}
