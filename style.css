@@ -29,10 +29,13 @@ header{
     border-bottom-right-radius: 50px;
     z-index: 1000;
     top: 0;
+    transition: ease-in all 500ms;
 }
 
-header.sticky{
-    font-size: 64px;
+header.scrolled{
+    border-right: #1af4b7 solid 2px;
+    border-bottom: #1af4b7 solid 2px;
+    background-color: #23272a;
 }
 
 .menu_nav > ul{
