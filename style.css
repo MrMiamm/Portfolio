@@ -12,6 +12,7 @@ body{
     background-color: #23272a;
     width: 100%;
     min-height: 100vh;
+    overflow-x: hidden;
 }
 
 ::selection{
@@ -21,24 +22,53 @@ body{
 
 /*****************************************************/
 /*Nav bar*/
-
 header{
     position: fixed;
-    width: 50%;
-    font-size: 32px;
-    border-bottom-right-radius: 50px;
-    z-index: 1000;
     top: 0;
+    width: 100%;
+    font-size: 32px;
+    z-index: 1000;
     transition: ease-in all 500ms;
 }
 
-header.scrolled{
+header nav{
+    width: fit-content;
+}
+
+.menu_nav{
+    display: none;
+    margin-top: -6em;
+    animation: nav-top 500ms forwards;
+}
+
+header.scrolled+header.menu_nav{
+    display: block;
+}
+
+header.scrolled {
     border-right: #1af4b7 solid 2px;
     border-bottom: #1af4b7 solid 2px;
     background-color: #23272a;
+    animation: nav-scrolled 500ms forwards;
 }
 
-.menu_nav > ul{
+@keyframes nav-scrolled {
+    from{
+        margin-top: -6em;
+    } to{
+        margin-top: 0;
+    }
+}
+
+@keyframes nav-top {
+    from{
+        margin-top: 0em;
+    } to{
+        margin-top: -6em;
+    }
+}
+
+header > nav > ul{
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
@@ -47,12 +77,21 @@ header.scrolled{
     list-style: none;
 }
 
-.menu_nav a{
-    color: #fff;
-    text-decoration: none;
+header > nav > ul li{
+    margin-right: 1em;
 }
 
-.menu_nav {
+header > nav > ul li+li+li+li+li{
+    margin-right: 0;
+}
+
+header > nav a{
+    color: #fff;
+    text-decoration: none;
+    gap: 1em;
+}
+
+header > nav {
     margin-left: 1em;
     margin-right: 1em;
 }
@@ -78,6 +117,7 @@ header.scrolled{
 #accueil > div > div{
     display: flex;
     flex-direction: row;
+    gap: 3em;
     width: 80%;
     justify-content: space-evenly;
     align-items: center;
@@ -89,7 +129,7 @@ header.scrolled{
     border-radius: 2em 3em;
     padding: 1.5em;
     font-size: 24px;
-    width: 40%;
+    width: fit-content;
     height:fit-content;
 }
 
@@ -101,7 +141,7 @@ header.scrolled{
 }
 
 #accueil nav ul{
-    margin-left: 14em;
+    gap: 10em;
     margin-top: 2em;
     display: flex;
     flex-direction: row;

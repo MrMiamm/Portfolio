@@ -18,20 +18,6 @@ body{
     color: #fff;
 }
 
-.see-button{
-    display: flex;
-    z-index: 5;
-    justify-content: center;
-    align-items: center;
-    background-image: linear-gradient(0deg,#1af4b7, #1db68b, #1af4b7);
-    border-radius: 30px;
-    width: auto;
-    color: #fff;
-    font-size: 24px;
-    text-decoration: none;
-    padding: 15px 30px;
-}
-
 h1{
     font-size: 64px;
     color: #fff;
@@ -42,13 +28,9 @@ h1{
 
 header{
     position: fixed;
-    width: 50%;
+    width: min-content;
     font-size: 32px;
     top: 0;
-}
-
-header.sticky{
-    font-size: 64px;
 }
 
 .menu_nav > ul{
@@ -60,9 +42,18 @@ header.sticky{
     list-style: none;
 }
 
+.menu_nav > ul li{
+    margin-right: 1em;
+}
+
+.menu_nav  > ul li+li+li+li+li{
+    margin-right: 0;
+}
+
 .menu_nav a{
     color: #fff;
     text-decoration: none;
+    gap: 1em;
 }
 
 .menu_nav {
