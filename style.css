@@ -83,9 +83,33 @@ header > nav > ul li+li+li+li+li{
 }
 
 header > nav a{
+    position: relative;
     color: #fff;
     text-decoration: none;
     gap: 1em;
+    transition: ease-in all 250ms;
+}
+
+header > nav a:hover{
+    font-size: 31px;
+}
+
+header > nav a::after{
+    content: ' ';
+    position: absolute;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: #fff;
+    bottom: -5px;
+    transition: ease-in all 100ms;
+}
+
+header > nav a:hover::after{
+    width: 100%;
+}
+header > nav+nav a:hover::after{
+    width: 0;
 }
 
 header > nav {
