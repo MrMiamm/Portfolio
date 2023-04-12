@@ -100,6 +100,11 @@ header > nav {
 /*Accueil*/
 
 #accueil{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    gap: 1em;
     z-index: 1;
     background-image: linear-gradient(135deg,#0fc2e3,blue);
     width: 100%;
@@ -109,21 +114,12 @@ header > nav {
 
 #accueil > div{
     display: flex;
-    align-items: center;
     flex-direction: column;
-    padding-top: 15%;
+    width: fit-content;
+    gap: 1em;
 }
 
 #accueil > div > div{
-    display: flex;
-    flex-direction: row;
-    gap: 3em;
-    width: 80%;
-    justify-content: space-evenly;
-    align-items: center;
-}
-
-#accueil > div > div > div{
     background-color: #fff;
     color: blue;
     border-radius: 2em 3em;
@@ -141,13 +137,13 @@ header > nav {
 }
 
 #accueil nav ul{
-    gap: 10em;
-    margin-top: 2em;
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
     list-style: none;
-    justify-content: space-evenly;
-    width: 100%; 
+    align-items: center;
+    width: fit-content;
+    gap: 1em;
 }
 
 /*****************************************************/
