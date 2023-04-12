@@ -24,6 +24,9 @@ body{
 /*Nav bar*/
 header{
     position: fixed;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
     top: 0;
     width: 100%;
     font-size: 32px;
@@ -35,14 +38,16 @@ header nav{
     width: fit-content;
 }
 
-.menu_nav{
-    display: none;
-    margin-top: -6em;
-    animation: nav-top 500ms forwards;
+header > nav+nav{
+    display: flex;
+    width: 100%;
+    justify-content: flex-end;
 }
 
-header.scrolled+header.menu_nav{
-    display: block;
+header > nav+nav img{
+    position:static;
+    width: 49px;
+    height: 48px;
 }
 
 header.scrolled {
@@ -57,14 +62,6 @@ header.scrolled {
         margin-top: -6em;
     } to{
         margin-top: 0;
-    }
-}
-
-@keyframes nav-top {
-    from{
-        margin-top: 0em;
-    } to{
-        margin-top: -6em;
     }
 }
 

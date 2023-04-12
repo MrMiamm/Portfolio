@@ -33,7 +33,18 @@ header{
     top: 0;
 }
 
-.menu_nav > ul{
+header nav {
+    margin-left: 1em;
+    margin-right: 1em;
+}
+
+header nav a{
+    color: #fff;
+    text-decoration: none;
+    gap: 1em;
+}
+
+header nav > ul{
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
@@ -42,23 +53,12 @@ header{
     list-style: none;
 }
 
-.menu_nav > ul li{
+header nav > ul li{
     margin-right: 1em;
 }
 
-.menu_nav  > ul li+li+li+li+li{
+header nav > ul li+li+li+li+li{
     margin-right: 0;
-}
-
-.menu_nav a{
-    color: #fff;
-    text-decoration: none;
-    gap: 1em;
-}
-
-.menu_nav {
-    margin-left: 1em;
-    margin-right: 1em;
 }
 
 /*****************************************************/
