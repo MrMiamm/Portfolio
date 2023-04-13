@@ -228,6 +228,64 @@ header > nav {
     color: #1db68b;
 }
 
+#competences h2{
+    font-size: 32px;
+    color: #1db68b;
+}
+
+#competences > div{
+    margin-top: 5em;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 1em;
+}
+
+#competences article{
+    position: relative;
+    background-color: #23272a;
+    color: #fff;
+    list-style: none;
+    font-size: 24px;
+    border-radius: 28px;
+    padding: 1em;
+    transition: ease-in 500ms all;
+    box-shadow: 0px 0px 10px #1db68b90,
+                0px 0px 40px #1db68b90,
+                0px 0px 80px #1db68b90;
+}
+
+#competences article::after{
+    content: " ";
+    position: absolute;
+    top: 0px;
+    left: 0;
+    background: linear-gradient(45deg, #1af4b7, #1db68b);
+    border-radius: 28px;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    transition: ease-in 500ms all;
+}
+
+#competences article:hover::after{
+    top: 10px;
+    left: 20px;
+}
+
+#competences article:hover{
+    box-shadow: 10px 10px 20px #1db68b90,
+                10px 10px 80px #1db68b90,
+                10px 10px 160px #1db68b90;
+    margin-top: 3px;
+}
+
+#competences ul{
+    margin-top: 1em;
+    list-style: none;
+}
+
 /*****************************************************/
 /*Formations*/
 
