@@ -44,10 +44,14 @@ header > nav+nav{
     justify-content: flex-end;
 }
 
-header > nav+nav img{
-    position:static;
-    width: 49px;
-    height: 48px;
+header > nav+nav a{
+    width: 50px;
+    height: 50px;
+}
+
+header > nav+nav a img{
+    width: 100%;
+    height: 100%;
 }
 
 header.scrolled {
@@ -88,10 +92,6 @@ header > nav a{
     text-decoration: none;
     gap: 1em;
     transition: ease-in all 250ms;
-}
-
-header > nav a:hover{
-    font-size: 31px;
 }
 
 header > nav a::after{
