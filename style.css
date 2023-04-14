@@ -4,6 +4,7 @@
     margin: 0;
     padding: 0;
     scroll-behavior: smooth;
+    scroll-margin-top: 3em;
 }
 
 body{
@@ -217,23 +218,23 @@ header > nav {
 /*****************************************************/
 /*Competences*/
 
-#competences{
+.competences{
     padding: 6em 4em;
     z-index: 3;
     height: 100vh;
 }
 
-#competences h1{
+.competences h1{
     font-size: 48px;
     color: #1db68b;
 }
 
-#competences h2{
+.competences h2{
     font-size: 32px;
     color: #1db68b;
 }
 
-#competences > div{
+.competences > div{
     margin-top: 5em;
     display: flex;
     flex-direction: row;
@@ -242,7 +243,7 @@ header > nav {
     gap: 2em;
 }
 
-#competences article{
+.competences article{
     position: relative;
     background-color: #23272a;
     color: #fff;
@@ -257,7 +258,7 @@ header > nav {
                 10px 10px 80px #1db68b90;
 }
 
-#competences article::after{
+.competences article::after{
     content: " ";
     position: absolute;
     top: -20px;
@@ -270,19 +271,19 @@ header > nav {
     transition: ease-in 500ms all;
 }
 
-#competences article:hover::after{
+.competences article:hover::after{
     top: 10px;
     left: 20px;
 }
 
-#competences article:hover{
+.competences article:hover{
     box-shadow: 0px 0px 20px #1db68b90,
                 0px 0px 80px #1db68b90,
                 0px 0px 160px #1db68b90;
     margin-top: 3px;
 }
 
-#competences ul{
+.competences ul{
     margin-top: 1em;
     list-style: none;
 }
@@ -290,7 +291,7 @@ header > nav {
 /*****************************************************/
 /*Formations*/
 
-#formations{
+.formations{
     position: relative;
     background-color: #23272a;
     padding: 6em 4em;
@@ -301,7 +302,7 @@ header > nav {
     box-shadow: 0px 10px 10px #00000090;
 }
 
-#formations h1{
+.formations h1{
     font-size: 48px;
     color: #1db68b;
 }
@@ -309,18 +310,18 @@ header > nav {
 /*****************************************************/
 /*Projets*/
 
-#projets{
+.projets{
     position: relative;
-    margin-top: -15%;
+    margin-top: -20em;
     z-index: 2;
-    padding: calc(6em + 15%) 4em;
+    padding: calc(6em + 20em) 4em;
     background-image: linear-gradient(-45deg,#0fc2e3,blue);
     min-height: 100vh;
     color: #fff;
     box-shadow: inset 0px -3px 300px #00000090;
 }
 
-#projets h1{
+.projets h1{
     font-size: 48px;
 }
 
