@@ -28,9 +28,30 @@ h1{
 
 header{
     position: fixed;
-    width: min-content;
-    font-size: 32px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
     top: 0;
+    width: 100%;
+    font-size: 32px;
+    z-index: 1000;
+    animation: nav-top 500ms forwards;
+}
+
+@keyframes nav-top {
+    from{
+        margin-top: 0;
+        border-bottom: #1af4b7 solid 2px;
+        background-color: #23272a;
+    } 
+    50%{
+        margin-top: -6em;
+        background: none;
+        border: none;
+    }
+    to{
+        margin-top: 0;
+    }
 }
 
 header nav {
@@ -39,9 +60,44 @@ header nav {
 }
 
 header nav a{
+    position: relative;
     color: #fff;
     text-decoration: none;
     gap: 1em;
+    transition: ease-in color 100ms;
+}
+
+header > nav a:hover{
+    color: #0fc2e3;
+}
+
+header.scrolled > nav a:hover{
+    color: #1db68b;
+}
+
+header > nav a::after{
+    content: ' ';
+    z-index: -1;
+    opacity: 0;
+    position: absolute;
+    left: 0;
+    height: 110%;
+    width: 120%;
+    top: -5%;
+    left: -10%;
+    background-color: #fff;
+    bottom: -5px;
+    border-radius: 28px;
+    transition: ease-in opacity 100ms;
+    filter: drop-shadow(1px 1px 3px #ffffff50);
+}
+
+header > nav+nav a::after{
+    display: none;
+}
+
+header > nav a:hover::after{
+    opacity: 100%;
 }
 
 header nav > ul{

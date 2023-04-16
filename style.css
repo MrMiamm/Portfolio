@@ -73,7 +73,6 @@ header > nav+nav a img{
 }
 
 header.scrolled {
-    border-right: #1af4b7 solid 2px;
     border-bottom: #1af4b7 solid 2px;
     background-color: #23272a;
     animation: nav-scrolled 500ms forwards;
