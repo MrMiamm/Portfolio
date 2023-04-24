@@ -10,7 +10,9 @@
 
 body{
     background-image: linear-gradient(135deg,#0fc2e3,blue);
-    height: calc(100vh - 6em);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
 }
 
 ::selection{
@@ -230,6 +232,7 @@ input{
     input:checked ~ header{
         border-bottom: #1af4b7 solid 2px;
         box-shadow: 0px 0px 10px #1db68b;
+        animation: none;
     }
     
     header > nav a:checked ~ header > nav ul{
@@ -242,44 +245,135 @@ input{
 /*Accueil*/
 
 section{
-    margin: 6em 4em;
-    height: 100%;
+    padding: 6em 4em;
+    position: absolute;
+    top: 0;
+    height: calc(100% - 12em);
     color: #fff;
+    box-shadow: inset 0px -3px 300px #00000090;
 }
 
-section > div{
+section > div > div{
     display: flex;
     flex-direction: row;
     margin-top: 2em;
 }
 
-section > div > img{
+.content > img{
+    align-self: center;
     width: 16em;
     height: 16em;
-    border-top-left-radius: 50em;
-    border-bottom-left-radius: 50em;
+    border-radius: 50em;
 }
 
 .content{
+    display: flex;
     background-color: #fff;
-    color: blue;
-    padding: 1em;
-    font-size: 24px;
     border-top-right-radius: 50em;
-    border-bottom-right-radius: 50em;
+    border-radius: 50em;
+    width: 100%;
+    height: fit-content;
 }
 
-.content h2{
+.content > div{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    gap: 1em;
+    color: blue;
+    font-size: 24px;
+}
+.content > div > div{
+    margin: 1em;
+    margin-right: 3em;
+    width: 50%;
+}
+
+h2{
     font-size: 32px;
 }
 
 .other{
-    margin-left: 6em;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.other h2{
+    margin-bottom: .1em;
+    text-align: center;
 }
 
 .details{
     width: 50%;
+    gap: 1em;
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
+}
+
+.details div ul{
+    background-color: #fff;
+    padding: 1em;
+    color: blue;
+    border-radius: 5em;
+    list-style: none;
+    font-weight: bold;
+    font-size: 24px;
+}
+
+.details div+div ul{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1em;
+}
+
+@media screen and (max-width: 1260px){
+
+    section{
+        height: fit-content;
+        padding: 0;
+        padding-top: 6em;
+    }
+
+    h1{
+        text-align: center;
+    }
+
+    .content{
+        align-items: center;
+        flex-direction: column;
+        width: 100%;
+        padding-bottom: 10em;
+    }
+
+    .content > div{
+        align-items: center;
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .content > div > div{
+        margin: auto;
+        text-align: center;
+        width: 80%;
+    }
+
+    .other{
+        margin-top: 1em;
+        width: 100%;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .details{
+        margin: 1em 0;
+        width: 80%;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
 }
