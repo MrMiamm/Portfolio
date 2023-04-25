@@ -5,6 +5,7 @@
     padding: 0;
     scroll-behavior: smooth;
     scroll-margin-top: 3em;
+    transition: all .5s ease-in;
 }
 
 body{
@@ -17,7 +18,7 @@ body{
 }
 
 ::selection{
-    background-color: #23272a;
+    background-color: #000;
     color: #fff;
 }
 
@@ -318,34 +319,9 @@ input{
 }
 
 /*****************************************************/
-/*Competences*/
+/*Articles*/
 
-.competences{
-    padding: 6em 4em;
-    z-index: 3;
-    min-height: 100vh;
-}
-
-.competences h1{
-    font-size: 48px;
-    color: #1db68b;
-}
-
-.competences h2{
-    font-size: 32px;
-    color: #1db68b;
-}
-
-.competences > div{
-    margin-top: 5em;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    gap: 2em;
-}
-
-.competences article{
+article{
     position: relative;
     background-color: #23272a;
     color: #fff;
@@ -360,7 +336,7 @@ input{
                 10px 10px 80px #1db68b90;
 }
 
-.competences article::after{
+article::after{
     content: " ";
     position: absolute;
     top: -20px;
@@ -373,21 +349,73 @@ input{
     transition: ease-in 500ms all;
 }
 
-.competences article:hover::after{
+article:hover::after{
     top: 10px;
     left: 20px;
 }
 
-.competences article:hover{
+article:hover{
     box-shadow: 0px 0px 20px #1db68b90,
                 0px 0px 80px #1db68b90,
                 0px 0px 160px #1db68b90;
     margin-top: 3px;
 }
 
-.competences ul{
+@media screen and (max-width: 1000px){
+
+    article{
+        margin: .5em;
+    }
+
+    article:hover{
+        margin: .5em;
+    }
+
+    article:hover::after{
+        top: 0;
+        left: 0;
+    }
+}
+
+@media screen and (max-width: 700px){
+    article{
+        width: 80%;
+    }
+}
+
+/*****************************************************/
+/*Competences*/
+
+.competences{
+    padding: 6em 4em;
+    z-index: 3;
+    height: calc(100vh - 12em);
+}
+
+.competences h1{
+    font-size: 48px;
+    color: #1db68b;
+}
+
+.competences h2{
+    font-size: 32px;
+    color: #1db68b;
+}
+
+.competences > div{
+    margin-top: 5em;
+    height: 75%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 2em;
+}
+
+.competences article > ul{
     margin-top: 1em;
     list-style: none;
+    font-size: larger;
 }
 
 @media screen and (max-width: 1000px){
@@ -415,12 +443,6 @@ input{
     }
 }
 
-@media screen and (max-width: 700px){
-    .competences article{
-        width: 80%;
-    }
-}
-
 /*****************************************************/
 /*Formations*/
 
@@ -429,15 +451,57 @@ input{
     background-color: #23272a;
     padding: 6em 4em;
     color: #fff;
-    height: 80vh;
+    min-height: 80vh;
     border-radius: 0% 0% 30% 30% / 0% 0% 30% 30% ;
     z-index: 3;
     box-shadow: 0px 10px 10px #00000090;
+    transition: all .5s ease-in;
 }
 
 .formations h1{
     font-size: 48px;
     color: #1db68b;
+}
+
+.formations h2{
+    font-size: 32px;
+    color: #1db68b;
+}
+
+.formations > div{
+    margin-top: 5em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.formations > div > article+article{
+    margin-top: 10%;
+}
+
+.formations > div > article+article > div::after{
+    content: " ";
+    position: absolute;
+    top: -113.5%;
+    left: 50%;
+    background: linear-gradient(45deg, #1af4b7, #1db68b);
+    border-radius: 28px;
+    width: 10px;
+    height: 115%;
+    z-index: -2;
+}
+
+@media screen and (max-width: 1000px){
+    .formations{
+        border-radius: 0;
+    }
+}
+
+@media screen and (max-width: 900px){
+    .formations > div > article+article > div::after{
+        top: -50%;
+        height: 55%;
+    }
 }
 
 /*****************************************************/
