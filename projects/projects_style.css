@@ -4,8 +4,6 @@
     margin: 0;
     padding: 0;
     scroll-behavior: smooth;
-    animation-duration: 1s;
-    animation-delay: 1s;
 }
 
 body{
@@ -23,222 +21,6 @@ body{
 h1{
     font-size: 64px;
     color: #fff;
-}
-
-/*****************************************************/
-/*Nav bar*/
-
-header{
-    position: fixed;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    top: 0;
-    width: 100%;
-    font-size: 32px;
-    z-index: 1000;
-    animation: nav-top 500ms forwards;
-    transition: ease-in all 500ms;
-}
-
-@keyframes nav-top {
-    from{
-        margin-top: 0;
-        border-bottom: #1af4b7 solid 2px;
-        background-color: #23272a;
-    } 
-    70%{
-        margin-top: -6em;
-        background: none;
-        border: none;
-    }
-    to{
-        margin-top: 0;
-    }
-}
-
-header nav{
-    width: fit-content;
-}
-
-header > nav+nav{
-    position: absolute;
-    top: .25em;
-    right: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-header > nav+nav a{
-    width: 49px;
-    height: 48px;
-    transition: ease-in all 300ms;
-}
-
-header > nav+nav a+a{
-    width: 75px;
-    height: 75px;
-}
-
-header > nav+nav a:hover{
-    filter: drop-shadow(3px 3px 2px #00000090)
-            drop-shadow(-1px -1px 1px #ffffff50);
-}
-
-header.scrolled > nav+nav a:hover{
-    filter: drop-shadow(3px 3px 2px #ffffff90)
-            drop-shadow(-1px -1px 1px #00000050);
-}
-
-header > nav+nav a img{
-    width: 100%;
-    height: 100%;
-}
-
-header.scrolled {
-    border-bottom: #1af4b7 solid 2px;
-    background-color: #23272a;
-    min-height: 3em;
-    animation: nav-scrolled 500ms forwards;
-    box-shadow: 0px 0px 10px #1db68b;
-}
-
-@keyframes nav-scrolled {
-    from{
-        margin-top: -6em;
-    } to{
-        margin-top: 0;
-    }
-}
-
-header > nav > ul{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-    line-height: 3em;
-    width: 100%;
-    list-style: none;
-}
-
-header > nav > ul li{
-    margin-right: 1em;
-}
-
-header > nav > ul li+li+li+li+li{
-    margin-right: 0;
-}
-
-header > nav a{
-    position: relative;
-    color: #fff;
-    text-decoration: none;
-    gap: 1em;
-    transition: ease-in color 100ms;
-}
-
-header > nav a:hover{
-    color: #0fc2e3;
-}
-
-header.scrolled > nav a:hover{
-    color: #1db68b;
-}
-
-header > nav a::after{
-    content: ' ';
-    z-index: -1;
-    opacity: 0;
-    position: absolute;
-    left: 0;
-    height: 110%;
-    width: 120%;
-    top: -5%;
-    left: -10%;
-    background-color: #fff;
-    bottom: -5px;
-    border-radius: 28px;
-    transition: ease-in opacity 100ms;
-    filter: drop-shadow(1px 1px 3px #ffffff50);
-}
-
-header > nav+nav a::after{
-    display: none;
-}
-
-header > nav a:hover::after{
-    opacity: 100%;
-}
-
-header > nav {
-    margin-left: 1em;
-    margin-right: 1em;
-}
-
-header label{
-    position: absolute;
-    top: calc(1em - 10px);
-    display: none;
-    cursor: pointer;
-    height: min-content;
-}
-
-header label span{
-    width: 40px;
-    height: 4px;
-    margin-top: 10px;
-    background-color: #fff;
-}
-
-input{
-    display: none;
-}
-
-@media screen and (max-width: 1000px){
-    header label{
-        display: grid;
-    }
-
-    header {
-        background-color: #23272a;
-    }
-
-    header > nav{
-        display: flex;
-        align-items: center;
-    }
-
-    header > nav ul{
-        display: none;
-        flex-direction: column;
-        line-height: auto;
-        margin-top: 2em;
-        margin-left: -100vw;
-    }
-
-    input:checked ~ header > nav ul{
-        display: flex;
-        transform: translateX(100vw);
-        justify-content: space-around;
-        text-align: center;
-        line-height: 2em;
-        background-color: #0fc2e3;
-    }
-
-    header.scrolled{
-        animation: none;
-    }
-
-    input:checked ~ header{
-        border-bottom: #1af4b7 solid 2px;
-        box-shadow: 0px 0px 10px #1db68b;
-        animation: none;
-    }
-    
-    header > nav a:checked ~ header > nav ul{
-        margin-left: -100vw;
-    }
-
 }
 
 /*****************************************************/
@@ -376,4 +158,20 @@ h2{
         align-items: center;
         justify-content: center;
     }
+}
+
+/*****************************************************/
+/*Footer - Contact*/
+
+footer{
+    position:absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+}
+
+footer > p{
+    position: absolute;
+    bottom: 1em;
+    right: 3em;
 }
