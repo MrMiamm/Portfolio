@@ -512,6 +512,7 @@ input{
     margin-top: -20em;
     z-index: 2;
     padding: calc(6em + 20em) 4em;
+    padding-bottom: 6em;
     background-image: linear-gradient(-45deg,#0fc2e3,blue);
     min-height: 100vh;
     color: #fff;
@@ -522,11 +523,21 @@ input{
     font-size: 48px;
 }
 
+.projets > div{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: stretch;
+    justify-content: center;
+    gap: 2em;
+    margin-top: 2em;
+}
+
 .projet{
     display: flex;
+    position: relative;
     flex-direction: column;
     align-items: center;
-    margin-top: 2em;
     width: 10em;
     padding: 2em;
     background-color: #fff;
@@ -541,13 +552,20 @@ input{
 }
 
 .projet p{
-    margin: 1em;
+    margin-top: 1em;
+    margin-bottom: 3em;
 }
 
 .projet img{
     border-radius: 50%;
-    width: 50%;
-    height: 50%;
+    width: 150px;
+    height: 150px;
+}
+
+.projet a{
+    position: absolute;
+    bottom: 2em;
+    left: auto;
 }
 
 /*****************************************************/
