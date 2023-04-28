@@ -358,7 +358,6 @@ input{
     box-shadow: 0px 0px 20px #1db68b90,
                 0px 0px 80px #1db68b90,
                 0px 0px 160px #1db68b90;
-    margin-top: 3px;
 }
 
 @media screen and (max-width: 1000px){
@@ -545,6 +544,13 @@ input{
     border-radius: 2em 3em;
     font-size: 24px;
     text-align: center;
+    box-shadow: 0px 10px 50px #00000090;
+    transition: all .5s ease-in;
+}
+
+.projet:hover{
+    box-shadow: 0 0 20px #00000090;
+    transform: translateY(-1px);
 }
 
 .projet h2{
@@ -621,6 +627,10 @@ footer nav{
 footer nav a+a img{
     width: 100px;
     height: 100px;
+}
+
+footer nav a{
+    transition: ease-in all 300ms;
 }
 
 footer nav a:hover{
