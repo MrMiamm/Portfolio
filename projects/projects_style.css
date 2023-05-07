@@ -30,7 +30,7 @@ section{
     padding: 6em 4em;
     position: absolute;
     top: 0;
-    height: calc(100% - 12em);
+    height: 100%;
     color: #fff;
     box-shadow: inset 0px -3px 300px #00000090;
 }
@@ -168,6 +168,7 @@ footer{
     top: 100%;
     left: 0;
     width: 100%;
+    transform: translateY(1em);
 }
 
 footer > p{

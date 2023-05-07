@@ -606,6 +606,7 @@ footer > div{
     gap: 6em;
     align-items: flex-start;
     flex-wrap: wrap;
+    margin-bottom: 1em;
 }
 
 footer > div > div{
