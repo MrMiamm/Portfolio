@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="style.css">
-    <link rel="stylesheet" type="text/css" href="buttons.css">
+    <link rel="stylesheet" type="text/css" href="stylesheet/buttons.css">
     <link rel="icon" href="/img/ma_photo.png">
     <title>William CHERON Portfolio</title>
 </head>
@@ -19,11 +19,11 @@
                 <span></span>
             </label>
             <ul>
-                <li><a class="pagelink" href="#accueil">Accueil</a></li>
-                <li><a class="pagelink" href="#competences">Compétences</a></li>
-                <li><a class="pagelink" href="#formations">Formations</a></li>
-                <li><a class="pagelink" href="#projets">Projets</a></li>
-                <li><a class="pagelink" href="#contact">Contact</a></li>
+                <li><a class="pagelink" href="#accueil" onfocus="lenis.scrollTo('top')">Accueil</a></li>
+                <li><a class="pagelink" href="#competences" onfocus="lenis.scrollTo('#gotoCompetences')">Compétences</a></li>
+                <li><a class="pagelink" href="#formations" onfocus="lenis.scrollTo('#gotoFormations')">Formations</a></li>
+                <li><a class="pagelink" href="#projets" onfocus="lenis.scrollTo('#gotoProjets')">Projets</a></li>
+                <li><a class="pagelink" href="#contact" onfocus="lenis.scrollTo('#contact')">Contact</a></li>
             </ul>
         </nav>
         <nav>
@@ -31,7 +31,6 @@
             <a href="#" target="_blank"><img src="icons/linkedin.svg" alt="Linkedin"></a>
         </nav>
     </header>
-    
     <section id="accueil"> 
         <img src="img/ma_photo.png" alt="Une photo de moi" width="250px" height="250px">
         <div>
@@ -41,11 +40,13 @@
             <nav>
                 <ul>
                     <li><a class="see-button reverse" href="resources/CV_William_CHERON.pdf" download>Télécharger mon CV</a></li>
-                    <li><a class="see-button reverse" href="#contact">Me contacter</a></li>
+                    <li><a class="see-button reverse" href="#contact" onfocus="lenis.scrollTo('#contact')">Me contacter</a></li>
                 </ul>
             </nav>
         </div>
     </section>
+
+    <div id="gotoCompetences" class="goto"></div>
     <section class="competences">
         <h1 id="competences">Compétences</h1>
         <div>
@@ -85,6 +86,8 @@
             </article>
         </div> 
     </section>
+    
+    <div id="gotoFormations" class="goto"></div>
     <section class="formations">
         <h1 id="formations">Formations</h1>
         <div>
@@ -107,6 +110,8 @@
             </article>
         </div>
     </section>
+
+    <div id="gotoProjets" class="goto"></div>
     <section class="projets">
         <h1 id="projets">Projets</h1>
         <div>
@@ -159,6 +164,7 @@
         </div>
         <p>© 2023 William CHERON</p>
     </footer>
+    <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1/bundled/lenis.js"></script>
     <script type="text/javascript" src="js/script.js"></script>
 </body>
 </html>

@@ -4,7 +4,6 @@
     margin: 0;
     padding: 0;
     scroll-behavior: smooth;
-    scroll-margin-top: 3em;
 }
 
 body{
@@ -16,9 +15,37 @@ body{
     overflow-x: hidden;
 }
 
+.goto{
+    height: 3em;
+    width: 100%;
+}
+
 ::selection{
     background-color: #000;
     color: #fff;
+}
+
+/*****************************************************/
+/*Lenis*/
+
+html.lenis {
+    height: auto;
+}
+  
+.lenis.lenis-smooth {
+    scroll-behavior: auto;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+    overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+    overflow: hidden;
+}
+
+.lenis.lenis-scrolling iframe {
+    pointer-events: none;
 }
 
 /*****************************************************/
