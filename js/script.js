@@ -18,8 +18,8 @@ for(var i=0; i<elements.length; i++){
 }
 
 const lenis = new Lenis({
-    duration: 1,
-    lerp: 0.01,
+    duration: 1.1,
+    easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
     wheelMultiplier: 0.8
 });
 
@@ -28,8 +28,8 @@ lenis.on('scroll', (e) => {
 });
 
 function raf(time) {
-    lenis.raf(time)
-    requestAnimationFrame(raf)
+    lenis.raf(time);
+    requestAnimationFrame(raf);
 }
 
 requestAnimationFrame(raf);
