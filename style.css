@@ -1,4 +1,30 @@
 /*****************************************************/
+/*Fonts*/
+@font-face {
+    font-family: "NoirPro";
+    src: url("fonts/NoirPro-Regular.woff2") format("woff2"),
+    url("fonts/NoirPro-Regular.woff") format("woff");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "NoirProMedium";
+    src: url("fonts/NoirPro-Medium.woff2") format("woff2"),
+    url("fonts/NoirPro-Medium.woff") format("woff");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "NoirProLight";
+    src: url("fonts/NoirPro-Light.woff2") format("woff2"),
+    url("fonts/NoirPro-Light.woff") format("woff");
+    font-weight: normal;
+    font-style: normal;
+}
+
+/*****************************************************/
 /*Main Things*/
 *{
     margin: 0;
@@ -58,6 +84,7 @@ header{
     top: 0;
     width: 100%;
     font-size: 32px;
+    font-family: "NoirProLight", Arial, sans-serif;
     z-index: 1000;
     transition: ease-in all 500ms;
 }
@@ -256,7 +283,9 @@ input{
     flex-wrap: wrap;
     gap: 1em;
     z-index: 1;
-    background-image: linear-gradient(135deg,#0fc2e3,blue);
+    --angle: 135deg;
+    --col1: 0%;
+    background-image: linear-gradient(var(--angle),#0fc2e3 var(--col1), blue);
     width: 100%;
     min-height: 90vh;
     border-radius: 0% 0% 30% 30% / 0% 0% 30% 30% ;
@@ -284,6 +313,16 @@ input{
     transition: all 500ms ease;
 }
 
+#accueil > div > div > p{
+    font-size: 64px;
+    font-family: "NoirProLight", Arial, sans-serif;
+}
+
+#accueil > div > div > p+p{
+    font-size: 24px;
+    font-family: "NoirPro", Arial, sans-serif;
+}
+
 #accueil > div > div:hover, #accueil img:hover{
     filter: drop-shadow(-3px -3px 2px #ffffff90)
             drop-shadow(1px 1px 1px #ffffff50);
@@ -293,8 +332,8 @@ input{
 #accueil img{
     display: block;
     border-radius: 50%;
-    height: 15em;
-    width: 15em;
+    height: 30em;
+    width: 30em;
     filter: drop-shadow(3px 3px 2px #00000090)
             drop-shadow(-1px -1px 1px #ffffff50);
     transition: all 500ms ease;
@@ -310,13 +349,20 @@ input{
     gap: 1em;
 }
 
-@media screen and (max-width: 1085px){
-    #accueil img{
-        margin-top: 4em;
-    }
-
+@media screen and (max-width: 1412px){
     #accueil nav ul{
         justify-content: center;
+    }
+
+    #accueil img{
+        height: 20em;
+        width: 20em;
+    }
+}
+
+@media screen and (max-width: 1253px){
+    #accueil img{
+        margin-top: 4em;
     }
 }
 
@@ -354,6 +400,7 @@ input{
     color: #fff;
     list-style: none;
     font-size: 24px;
+    font-family: "NoirPro", Arial, sans-serif;
     border-radius: 28px;
     padding: 1em;
     min-width: 18%;
@@ -406,6 +453,14 @@ input{
 @media screen and (max-width: 700px){
     .competences article, .formations article{
         width: 80%;
+        box-shadow: 5px 5px 5px #1db68b90,
+                5px 5px 20px #1db68b90,
+                5px 5px 40px #1db68b90;
+    }
+
+    .competences article:hover, .formations article:hover{
+        box-shadow: 0px 0px 10px #1db68b90,
+                    0px 0px 40px #1db68b90;
     }
 }
 
@@ -419,12 +474,13 @@ input{
 }
 
 .competences h1{
-    font-size: 48px;
+    font-size: 64px;
+    font-family: "NoirProLight", Arial, sans-serif;
     color: #1db68b;
 }
 
 .competences h2{
-    font-size: 32px;
+    font-size: 48px;
     color: #1db68b;
 }
 
@@ -469,6 +525,16 @@ input{
     }
 }
 
+@media screen and (max-width: 600px){
+    .competences{
+        padding: 0;
+    }
+
+    .competences h1{
+        text-align: center;
+    }
+}
+
 /*****************************************************/
 /*Formations*/
 
@@ -485,12 +551,14 @@ input{
 }
 
 .formations h1{
-    font-size: 48px;
+    font-size: 64px;
+    font-family: "NoirProLight", Arial, sans-serif;
     color: #1db68b;
 }
 
 .formations h2{
-    font-size: 32px;
+    font-size: 48px;
+    font-family: "NoirPro", Arial, sans-serif;
     color: #1db68b;
 }
 
@@ -546,7 +614,8 @@ input{
 }
 
 .projets h1{
-    font-size: 48px;
+    font-size: 64px;
+    font-family: "NoirProLight", Arial, sans-serif;
 }
 
 .projets > div{
@@ -570,6 +639,7 @@ input{
     color: #1db68b;
     border-radius: 2em 3em;
     font-size: 24px;
+    font-family: "NoirProMedium", Arial, sans-serif;
     text-align: center;
     box-shadow: 0px 10px 50px #00000090;
     transition: all .5s ease-in;
@@ -582,6 +652,7 @@ input{
 
 .projet h2{
     font-size: 32px;
+    font-family: "NoirProLight", Arial, sans-serif;
 }
 
 .projet p{
@@ -616,6 +687,7 @@ footer{
     color: #fff;
     padding: 1em;
     font-size: 24px;
+    font-family: "NoirPro", Arial, sans-serif;
     box-shadow: 0px 0px 10px #00000090;
 }
 

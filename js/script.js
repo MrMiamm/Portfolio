@@ -17,6 +17,8 @@ for(var i=0; i<elements.length; i++){
     } 
 }
 
+gsap.registerPlugin(ScrollTrigger);
+
 const lenis = new Lenis({
     duration: 1.1,
     easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
@@ -33,3 +35,39 @@ function raf(time) {
 }
 
 requestAnimationFrame(raf);
+
+gsap.from("#contact > div", {
+    scrollTrigger: {
+      trigger: "#contact",
+      scrub: true,
+      start: "top-500 bottom",
+      end: "bottom bottom",
+    },
+    opacity: 0,
+    y: 150,
+    ease: "none"
+});
+
+gsap.from(".projet", {
+    scrollTrigger: {
+      trigger: ".projet",
+      scrub: true,
+      start: "top-500 bottom",
+      end: "bottom bottom",
+    },
+    opacity: 0,
+    stagger: 0.3
+});
+
+gsap.to("#contact > div, .projet", {
+    opacity: 1
+});
+
+gsap.to("#accueil", {
+    "--angle": "75deg",
+    "--col1": "10%",
+    duration: 1.5,
+    yoyo: true,
+    repeat: -1,
+    ease: "none"
+});
