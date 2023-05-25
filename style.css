@@ -470,7 +470,7 @@ input{
 .competences{
     padding: 6em 4em;
     z-index: 3;
-    height: calc(100vh - 12em);
+    height: 100vh;
 }
 
 .competences h1{
@@ -543,7 +543,7 @@ input{
     background-color: #23272a;
     padding: 6em 4em;
     color: #fff;
-    min-height: 80vh;
+    height: 100%;
     border-radius: 0% 0% 30% 30% / 0% 0% 30% 30% ;
     z-index: 3;
     box-shadow: 0px 10px 10px #00000090;

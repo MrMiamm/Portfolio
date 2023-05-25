@@ -52,15 +52,17 @@ gsap.from(".projet", {
     scrollTrigger: {
       trigger: ".projet",
       scrub: true,
-      start: "top-500 bottom",
-      end: "bottom bottom",
+      start: "top center",
+      end: "bottom bottom"
     },
     opacity: 0,
-    stagger: 0.3
+    x: -15,
+    stagger: 0.5
 });
 
 gsap.to("#contact > div, .projet", {
-    opacity: 1
+    opacity: 1,
+    x: 0
 });
 
 gsap.to("#accueil", {

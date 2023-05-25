@@ -7,10 +7,14 @@
 }
 
 body{
+    position: absolute;
+    top: 0;
+    width: 100%;
     background-image: linear-gradient(135deg,#0fc2e3,blue);
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
+    overflow-x: hidden;
 }
 
 ::selection{
@@ -56,17 +60,12 @@ html.lenis {
 
 section{
     padding: 6em 4em;
-    position: absolute;
-    top: 0;
-    height: 100%;
     color: #fff;
     box-shadow: inset 0px -3px 300px #00000090;
 }
 
-section > div > div{
-    display: flex;
-    flex-direction: row;
-    margin-top: 2em;
+section > div{
+    margin-top: 1em;
 }
 
 .content > img{
@@ -113,7 +112,7 @@ h2{
 
 .other{
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     align-items: center;
     justify-content:space-evenly;
     width: 100%;
@@ -129,14 +128,16 @@ h2{
     gap: 1em;
     display: flex;
     flex-direction: row;
-    justify-content: space-evenly;
+    justify-content: stretch;
 }
 
 .details div{
     background-color: #fff;
-    padding: 2em;
+    width: 100%;
+    padding: 1.5em;
     color: blue;
     border-radius: 5em;
+    text-align: center;
     font-weight: bold;
     font-size: 24px;
     font-family: "NoirProLight", Arial, sans-serif;
@@ -144,7 +145,7 @@ h2{
 
 .details div+div ul{
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     gap: 1em;
 }
@@ -196,26 +197,9 @@ h2{
 
     .details{
         margin: 1em 0;
-        width: 80%;
         flex-direction: column;
         align-items: center;
         justify-content: center;
         text-align: center;
     }
-}
-
-/*****************************************************/
-/*Footer - Contact*/
-
-footer{
-    position:absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-}
-
-footer > p{
-    position: absolute;
-    bottom: 1em;
-    right: 3em;
 }
