@@ -56,13 +56,13 @@ gsap.from(".projet", {
       end: "bottom bottom"
     },
     opacity: 0,
-    x: -15,
-    stagger: 0.5
+    x: -15
 });
 
 gsap.to("#contact > div, .projet", {
     opacity: 1,
-    x: 0
+    x: 0,
+    stagger: 0.8
 });
 
 gsap.to("#accueil", {
