@@ -1,3 +1,6 @@
+/**************************************************************************/
+/*Changer le menu du header lorsqu'on scroll*/
+
 window.addEventListener("scroll", () => {
     var header = document.querySelector('header');
     
@@ -8,6 +11,9 @@ window.addEventListener("scroll", () => {
     }
 });
 
+/**************************************************************************/
+/*Fermer le menu burger lorsqu'on appuie un bouton du menu*/
+
 var elements = document.getElementsByTagName("a"); 
 for(var i=0; i<elements.length; i++){
     if (elements[i].className == 'pagelink') { 
@@ -16,6 +22,37 @@ for(var i=0; i<elements.length; i++){
         }
     } 
 }
+
+/**************************************************************************/
+/*Fermer le menu burger lorsqu'on appuie un bouton du menu*/
+
+var links = [
+    '../resources/create_transmusicales.sql',
+    '../resources/Diagramme de classe UML.pdf'
+];
+
+var links_name = [
+    'create_transmusicales.sql',
+    'Diagramme de classe UML.pdf'
+];
+  
+function downloadAll(urls) {
+    var link = document.createElement('a');
+    link.style.display = 'none';
+
+    document.body.appendChild(link);
+
+    for (var i = 0; i < urls.length; i++) {
+        link.setAttribute('download', links_name[i]);
+        link.setAttribute('href', urls[i]);
+        link.click();
+    }
+
+    document.body.removeChild(link);
+}
+
+/**************************************************************************/
+/*Animations*/
 
 gsap.registerPlugin(ScrollTrigger);
 
