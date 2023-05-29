@@ -1,0 +1,1282 @@
+
+
+/*************************************************************************************/
+/*Définition des polices*/
+@font-face {
+    font-family: 'JacquesFrancois';
+    src: url('./font/jacquesfrancois-regular-webfont.woff2') format('woff2'),
+        url('./font/jacquesfrancois-regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Rakkas';
+    src: url('./font/rakkas-regular-webfont.woff2') format('woff2'),
+        url('./font/rakkas-regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/*************************************************************************************/
+/*Définition globales*/
+
+* {
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: #FFBD59;
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    font-family: 'Rakkas', Arial, sans-serif;
+}
+
+h2 {
+    font-family: 'JacquesFrancois', Arial, sans-serif;
+}
+
+.icone {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    width: 50px;
+    height: 50px;
+    background-color: #277AB9;
+}
+
+.icone>img {
+    scale: 0.9;
+}
+
+@media screen and (max-width: 880px) {
+    *>h2 {
+        font-size: 20px;
+    }
+}
+
+/*************************************************************************************/
+/*Définition du header*/
+body header {
+    margin: 0;
+    height: 330px;
+}
+
+body>header>div {
+    margin: 0;
+    position: static;
+    background-image: url(img/banniere_header.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 230px;
+    background-position: top center;
+    color: #fff;
+}
+
+body>header>div>div {
+    float: right;
+    margin-top: 1.5em;
+    margin-right: 1.5em;
+}
+
+body>header>div>div>a {
+    margin-right: 5px;
+}
+
+body>header>div>div>a>img {
+    transition: all 300ms ease-in-out;
+}
+
+body>header>div>div>a>img:hover {
+    transform: translateY(-3px);
+}
+
+body>header>div>img {
+    float: left;
+    margin-top: 2.5em;
+    margin-left: 3.5em;
+    transition: all 300ms ease-in-out;
+}
+
+body>header>div>h1 {
+    position: absolute;
+    width: 100%;
+    top: 2.75em;
+    font-size: 48px;
+    text-transform: capitalize;
+    margin: 0 auto 0 auto;
+    text-align: center;
+    transition: all 300ms ease-in-out;
+}
+
+body>header>div>nav {
+    position: absolute;
+    display: inline-flex;
+    align-items: center;
+    justify-content: space-around;
+    text-align: center;
+    flex-wrap: wrap;
+    width: 70%;
+    margin: 0;
+    top: 3em;
+    left: 20%;
+}
+
+body>header>div>nav>a {
+    position: relative;
+    font-family: 'JacquesFrancois', Arial, sans-serif;
+    font-style: normal;
+    font-weight: 4000/192vw;
+    font-size: 28px;
+    color: #fff;
+    text-decoration: none;
+    transition: all 300ms ease-in-out;
+}
+
+header div nav a:hover {
+    transform: translateY(-3px);
+}
+
+header div nav a::before {
+    content: "";
+    position: absolute;
+    height: 2px;
+    bottom: 0;
+    width: 0;
+    background-color: #fff;
+    transition: all 300ms ease-in-out;
+}
+
+.selectionne::before {
+    height: 2px;
+    width: 100%;
+}
+
+header div nav a:hover::before {
+    width: 100%;
+}
+
+body>header>div+div {
+    margin: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    background-image: none;
+    height: 100px;
+}
+
+body>header>div+div>div {
+    margin: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 350px;
+}
+
+@media screen and (max-width: 880px) {
+    body>header>div>nav {
+        display: flex;
+        flex-direction: column;
+        display: inline-flex;
+        align-items: flex-start;
+        font-size: 24px;
+        width: auto;
+        top: 2.8em;
+        left: 1em;
+    }
+
+    body>header>div>nav>a {
+        margin-bottom: 0.2em;
+    }
+
+    header div nav a:hover {
+        transform: none;
+    }
+
+    body>header>div>img {
+        width: 60px;
+        height: 60px;
+        margin-top: 0.5em;
+        margin-left: 1em;
+    }
+}
+
+@media screen and (max-width: 820px) {
+    body>header>div>nav {
+        top: 2em;
+    }
+
+    body>header>div>nav>a {
+        font-size: 20px;
+    }
+
+    body>header>div>img {
+        width: 40px;
+        height: 40px;
+    }
+
+    body>header>div>h1 {
+        top: 3.5em;
+        font-size: 48px;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    body>header>div+div {
+        display: none;
+    }
+
+    body header {
+        height: 230px;
+    }
+}
+
+/*************************************************************************************/
+/*Définition du footer*/
+body>footer {
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    height: 130px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    background-color: #277AB9;
+    background-image: url(img/logo.png);
+    background-repeat: no-repeat;
+    background-size: 100px;
+    background-origin: border-box;
+    background-position-y: center;
+    background-position-x: 3em;
+    transition: all 300ms ease-in-out;
+}
+
+body>footer div {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 420px;
+}
+
+body>footer img {
+    height: 60px;
+    width: 60px;
+    transition: all 300ms ease-in-out;
+}
+
+body>footer img:hover {
+    filter: drop-shadow(0 4px 4px rgba(0, 0, 0, 0.25));
+    transform: translateY(-3px);
+}
+
+body>footer>div+div{
+    position: absolute;
+    width: max-content;
+    bottom: 0;
+    right: 1em;
+    margin: 0;
+    padding: 0;
+    color: #fff;
+}
+
+@media screen and (max-width: 1100px) {
+    body>footer>div+div{
+        font-size: 14px;
+    }
+}
+
+@media screen and (max-width: 900px) {
+    body>footer {
+        background-size: 75px;
+        background-position-x: 2em;
+    }
+
+    body>footer div {
+        width: 315px;
+    }
+
+    body>footer>div+div{
+        font-size: 10px;
+    }
+
+    body>footer img {
+        height: 45px;
+        width: 45px;
+    }
+}
+
+@media screen and (max-width: 700px) {
+    body>footer {
+        background-size: 45px;
+        height: 90px;
+        background-position-x: 1em;
+    }
+
+    body>footer div {
+        width: 210px;
+    }
+
+    body>footer img {
+        height: 30px;
+        width: 30px;
+    }
+}
+
+/*************************************************************************************/
+/*************************************************************************************/
+/*Définition du main de la page d'accueil*/
+body>main {
+    height: 100%;
+}
+
+.texte_aguicheur {
+    height: 150px;
+    background-color: #fff;
+    font-family: 'JacquesFrancois', Arial, sans-serif;
+    font-size: 30px;
+    margin-bottom: 60px;
+}
+
+.texte_aguicheur p {
+    position: relative;
+    text-align: center;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 100%;
+    padding: 0;
+    margin: 0;
+}
+
+.coup_de_coeur {
+    display: inline-block;
+    height: 350px;
+    width: 100%;
+    padding: 0;
+    margin-bottom: 60px;
+}
+
+.carrousel {
+    float: left;
+    position: relative;
+    height: 350px;
+    width: 50%;
+    margin: 0;
+    overflow: hidden;
+    background-color: #fff;
+}
+
+.carrousel>#carrousel_container {
+    display: flex;
+    flex-direction: row;
+    height: 350px;
+}
+
+.carrousel>#carrousel_container>.img {
+    width: 50%;
+    height: 350px;
+    margin: 0;
+    background-size: cover;
+    background-position: top center;
+}
+
+.carrousel>.bouton_carrousel {
+    position: absolute;
+    width: 150px;
+    height: 150px;
+    cursor: pointer;
+    top: 30%;
+    opacity: 0.5;
+    transition: all 100ms ease-in-out;
+}
+
+.carrousel>.bouton_carrousel:hover {
+    opacity: 1;
+    filter: drop-shadow(0 4px 4px rgba(0, 0, 0, 0.25));
+}
+
+.coup_de_coeur>.contenu_coup_de_coeur {
+    float: right;
+    height: 350px;
+    width: 50%;
+    background-color: #fff;
+    margin: 0;
+}
+
+.coup_de_coeur>.contenu_coup_de_coeur>div {
+    height: 15%;
+    width: 100%;
+    background-color: #277AB9;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    font-size: 20px;
+    line-height: 60px;
+    text-transform: uppercase;
+
+}
+
+.coup_de_coeur>.contenu_coup_de_coeur>div+div {
+    display: flex;
+    background-color: #fff;
+    color: #000;
+    flex-direction: column;
+    align-items: stretch;
+    height: 65%;
+}
+
+.coup_de_coeur>.contenu_coup_de_coeur>div+div>a {
+    text-decoration: none;
+    width: 95%;
+    align-self: center;
+    transform: translateX(2.5%);
+    margin: 15px 0 15px 0;
+}
+
+.coup_de_coeur>.contenu_coup_de_coeur>div+div>a>.button {
+    position: static;
+    width: 95%;
+    text-transform: none;
+    font-size: 30px;
+}
+
+.coup_de_coeur>.contenu_coup_de_coeur>div+div>div {
+    align-items: center;
+    text-align: center;
+    vertical-align: center;
+    height: 150px;
+}
+
+.coup_de_coeur>.contenu_coup_de_coeur>div+div>div>p {
+    font-size: 20px;
+    text-transform: none;
+    text-overflow: clip;
+    line-height: 100%;
+}
+
+.coup_de_coeur>.contenu_coup_de_coeur>div+div>div>p::first-line {
+    font-size: 40px;
+    line-height: 150%;
+}
+
+.coup_de_coeur>.contenu_coup_de_coeur>div+div+div {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    vertical-align: center;
+    background-color: #277AB9;
+    height: 20%;
+}
+
+.coup_de_coeur>.contenu_coup_de_coeur>div+div+div>img {
+    width: 70px;
+    height: 100%;
+}
+
+#g {
+    left: 0.5em;
+}
+
+#d {
+    right: 0.5em;
+}
+
+@media screen and (max-width: 880px) {
+    .texte_aguicheur {
+        font-size: 20px;
+    }
+
+    .coup_de_coeur>.contenu_coup_de_coeur>div+div>a>.button {
+        font-size: 20px;
+    }
+
+    .coup_de_coeur>.contenu_coup_de_coeur>div+div+div>img {
+        width: 50px;
+        height: 50px;
+    }
+
+    .carrousel>.bouton_carrousel {
+        width: 100px;
+        height: 100px;
+        top: 35%;
+    }
+
+    .coup_de_coeur>.contenu_coup_de_coeur>div+div>div {
+        align-items: center;
+        text-align: center;
+        vertical-align: center;
+        height: 150px;
+    }
+
+    .coup_de_coeur>.contenu_coup_de_coeur>div+div>div>p {
+        font-size: 16px;
+        line-height: 100%;
+        margin-top: 30px;
+    }
+
+    .coup_de_coeur>.contenu_coup_de_coeur>div+div>div>p::first-line {
+        font-size: 30px;
+        line-height: 150%;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .texte_aguicheur {
+        font-size: 19px;
+    }
+
+    .coup_de_coeur {
+        display: none;
+    }
+}
+
+/*************************************************************************************/
+/*************************************************************************************/
+/*Page de la liste des séjours*/
+
+.sansPromo+div {
+    position: absolute;
+    top: 50%;
+}
+
+.notation {
+    width: 15%;
+    height: 15%;
+}
+
+.promotion {
+    background-color: red;
+    text-align: center;
+    width: 60px;
+    height: 60px;
+    position: absolute;
+    top: -25px;
+    left: -25px;
+    border-radius: 30px;
+}
+
+.promotion>p {
+    position: relative;
+    transform: translateY(-10%);
+    font-size: 20px;
+}
+
+.catalogue>h2 {
+    width: 100%;
+    text-align: center;
+    background-color: #277AB9;
+    margin: 0;
+    height: 60px;
+    color: #fff;
+    font-size: 40px;
+    line-height: 60px;
+    text-transform: uppercase;
+    position: sticky;
+    top: 0;
+    z-index: 1;
+}
+
+.catalogue>.catalog_item {
+    position: relative;
+    width: 320px;
+    height: 320px;
+    margin: 40px;
+    background-image: url(img/image_corse_carre.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    text-align: center;
+    color: #FFFFFF;
+    border-radius: 15% 0 15% 0;
+    transition: all 300ms ease-in-out;
+}
+
+.catalogue>.catalog_item:hover {
+    transform: translateY(-3px);
+    filter: drop-shadow(4px 4px 4px rgba(0, 0, 0, 0.5));
+}
+
+.avecPromo {
+    width: 100%;
+    height: 100%;
+}
+
+.avecPromo>p {
+    position: relative;
+    top: 23%;
+    font-size: 17px;
+}
+
+.avecPromo>h2 {
+    position: relative;
+    top: 31%;
+    font-size: 30px;
+}
+
+.sansPromo {
+    color: #000000;
+}
+
+.sansPromo>p {
+    font-size: 17px;
+    transform: translateY(-27px);
+}
+
+.sansPromo>h2 {
+    font-size: 30px;
+}
+
+main>.catalogue {
+    max-width: 100%;
+    background-color: #FFFFFF;
+    margin-top: 0;
+    margin-bottom: 60px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+.catalogue>.catalog_item>.icone {
+    position: absolute;
+    bottom: 0;
+}
+
+.button {
+    background-color: #3F91CC;
+    width: 155px;
+    height: 45px;
+    position: absolute;
+    right: 5%;
+    top: 77.5%;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 30px;
+    filter: drop-shadow(4px 4px 4px rgba(0, 0, 0, 0.25));
+    border-width: 5px;
+    border-style: solid;
+    border-color: #3F91CC;
+}
+
+.button>p {
+    text-decoration: none;
+    color: #FFFFFF;
+    font-size: 1.2em;
+    font-style: Inter;
+}
+
+.button:hover {
+    background-color: #277AB9;
+    border-color: #FFFFFF;
+    border-width: 5px;
+    border-style: solid;
+}
+
+@media screen and (max-width: 880px) {
+    .catalogue>h2 {
+        font-size: 30px;
+    }
+}
+
+@media screen and (max-width: 650px) {
+    .catalogue>h2 {
+        font-size: 20px;
+    }
+}
+
+@media screen and (max-width: 360px) {
+    .catalogue>h2 {
+        font-size: 15px;
+    }
+}
+
+/*************************************************************************************/
+/*************************************************************************************/
+/*Page hébergement détaillé*/
+
+
+main>.TitreMenu>h1 {
+    width: 100%;
+    text-align: center;
+    background-color: #277AB9;
+    margin: 0;
+    height: 60px;
+    color: #fff;
+    font-size: 40px;
+    line-height: 60px;
+    text-transform: uppercase;
+}
+
+.MenuDetail {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    flex-basis: auto;
+    flex-wrap: nowrap;
+    background-color: #fff;
+}
+
+/*main >.MenuDetail{
+    position: relative;
+    display: inline;
+    left: 0px;
+    width: 80px;
+    
+}
+*/
+.MenuDetail > .carrousel {
+    border-radius: 1em;
+    margin-left: 2em;
+   
+    height: 30em;
+}
+.MenuDetail > .carrousel > .carrousel_container{
+    height: 30em;
+    background-color: red;
+}
+
+.MenuDetail > .carrousel > .bouton_carrousel{
+    top: 33%;
+}
+
+.ArticleResume {
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
+    margin: 2em;
+    width: 100%;
+    text-align: center;
+    background-color: #5DC8F5;
+    margin: 3em;
+    color: #fff;
+    border-radius: 2em;
+    padding: 2em 0;
+    row-gap: 2em;
+    height: max-content;
+}
+
+.ArticleResume>div {
+    border-radius: 1em;
+    padding: 1em;
+}
+
+.ResumeTxt {
+    background-color: #277AB9;
+    font-family: 'JacquesFrancois';
+    width: calc(70% - 2em);
+    height: max-content;
+}
+
+.ResumeTxt>p {
+    font-size: 1.3em;
+
+}
+
+.ResumeListe {
+    background-color: #277AB9;
+    font-family: 'JacquesFrancois';
+    width: calc(30% - 2em);
+    height: max-content;
+
+}
+.ResumeListe > ul>li{
+    font-size: 1.21em;
+    text-align: left;
+}
+.EtoileNote_nbnote {
+    background-color: #277AB9;
+    display: flex;
+    flex-direction: column;
+    width: calc(40% - 2em);
+    height: max-content;
+}
+
+.EtoileNote_nbnote>p {
+    font-size: 2em;
+    margin-top: 0.3em;
+    transform: translateY(0.5em);
+}
+
+.EtoileNote_nbnote>div {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    transform: translateY(1em);
+}
+
+.EtoileNote_nbnote>div>img {
+    width: 3.5em;
+}
+
+.BoutonReserver {
+
+    width: calc(20% - 2em);
+    background-color: #3F91CC;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 30px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: #3F91CC;
+    padding: 0 !important;
+    height: 5em;
+
+}
+
+.BoutonReserver>a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    color: #FFFFFF;
+    font-size: 1.8em;
+    font-style: Inter;
+    width: 100%;
+    height: 100%;
+
+
+}
+
+.BoutonReserver:hover {
+    background-color: #277AB9;
+    border-color: #FFFFFF;
+    border-width: 5px;
+    border-style: solid;
+}
+
+.PrixMenu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #277AB9;
+    width: calc(40% - 2em);
+    height: 8em;
+}
+
+.PrixMenu>p {
+    font-size: 2.5em;
+    font-family: 'JacquesFrancois', Arial, sans-serif;
+}
+
+.button2 {
+    background-color: #3F91CC;
+    width: 155px;
+    height: 45px;
+    position: absolute;
+    right: 5%;
+    top: 77.5%;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 30px;
+    filter: drop-shadow(4px 4px 4px rgba(0, 0, 0, 0.25));
+    border-width: 5px;
+    border-style: solid;
+    border-color: #3F91CC;
+}
+
+.button2>p {
+    text-decoration: none;
+    color: #FFFFFF;
+    font-size: 1.2em;
+    font-style: Inter;
+}
+
+.button2:hover {
+    background-color: #277AB9;
+    border-color: #FFFFFF;
+    border-width: 5px;
+    border-style: solid;
+}
+
+
+
+/*
+.TitreSUPP > h1 {
+    width: 100%;
+    text-align: center;
+    background-color: #000000;
+    margin: 0;
+    height: 60px;
+    color: #fff;
+    font-size: 40px;
+    line-height: 60px;
+    text-transform: uppercase;
+}
+ */
+
+.catalogue2 {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    row-gap: 1em;
+    background-color: white;
+}
+
+.catalogue2>.catalog_item2 {
+    position: relative;
+    width: 320px;
+    height: 320px;
+    margin: 40px;
+    background-image: url(img/image_corse_carre.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    text-align: center;
+    color: #FFFFFF;
+    border-radius: 15% 0 15% 0;
+}
+
+.catalogue2>h2 {
+    width: 100%;
+    text-align: center;
+    background-color: #277AB9;
+    margin: 0;
+    height: 60px;
+    color: #fff;
+    font-size: 40px;
+    line-height: 60px;
+    text-transform: uppercase;
+}
+
+.sansPromo2 {
+    color: #000000;
+}
+
+.sansPromo2>p {
+    font-size: 17px;
+    transform: translateY(-27px);
+}
+
+.sansPromo2>h2 {
+    font-size: 30px;
+}
+
+main>.catalogue2 {
+    max-width: 100%;
+    background-color: #FFFFFF;
+    margin-top: 0;
+    margin-bottom: 60px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+.catalogue2>.catalog_item2>.icone2 {
+    position: absolute;
+    bottom: 0;
+}
+
+.notation2 {
+    width: 15%;
+    height: 15%;
+}
+
+.icone2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    width: 50px;
+    height: 50px;
+    background-color: #277AB9;
+}
+
+.icone2>img {
+    scale: 0.9;
+}
+
+.InfoDuSejour{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: space-between;
+    justify-content: center;
+    background-color: #FFBD59;
+    flex-basis: 100%;
+    font-family: 'JacquesFrancois';
+}
+
+.InfoDuSejour div{
+    width: 45%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.InfoDuSejour div div{
+    width: 100%;
+}
+
+.InfoDuSejour div div ul{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+}
+
+.ArticleProgActivite{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    color: white;
+}
+
+
+.Prog >h2{
+    display: flex;
+    justify-content: center;
+    background-color: #277AB9;
+    border: 1em solid #277AB9;
+    border-radius: 2em;
+    align-items: center;
+    color: #fff;
+}
+
+.Prog > .TitreP{
+    height: 50px;
+}
+.Prog >div{
+    position: relative;
+    bottom: 2.3em;
+    
+}
+.Prog > div>ul{
+    background-color: #fff;
+    border: 0.8em solid #FFFF;
+    border-radius: 2em;
+    color: #277AB9;
+    
+}
+
+.Activite > h2{
+    background-color: #FFFFFF;
+    border: 1em solid #ffffff;
+    border-radius: 2em;
+    color: #277AB9;
+    display: flex;
+    justify-content: center;
+}
+.Activite >div{
+    position: relative;
+    bottom: 2.3em;
+}
+.Activite > div>ul{
+    background-color: #277AB9;
+    border: 0.8em solid #277AB9;
+    border-radius: 2em;
+    color: #fff;
+}
+
+.ArticleAvantagesPeriode{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 100%;
+}
+
+.Avantages{
+    color: white;
+}
+
+.Avantages > h2{
+    background-color: #277AB9;
+    border: 1em solid #277AB9;
+    border-radius: 2em;
+    color: #ffffff;
+    display: flex;
+    justify-content: center;
+    margin: 0;
+}
+.Avantages >div{
+    position: relative;
+    bottom: 1.25em;
+}
+.Avantages > div>ul{
+    background-color: #fff;
+    border: 0.8em solid #FFFFFF;
+    border-radius: 2em;
+    color: #277AB9;
+
+}
+.Periode{
+  color: #FFFFFF;
+}
+
+.Periode > h2{
+    background-color: #FFFFFF;
+    border: 1em solid #ffffff;
+    border-radius: 2em;
+    display: flex;
+    justify-content: center;
+    color: #277AB9;
+    margin: 0;
+}
+.Periode > div{
+    position: relative;
+    bottom: 1.25em;
+}
+.Periode > div > ul{
+    background-color: #277AB9;
+    border: 0.8em solid #277AB9;
+    border-radius: 2em;
+    color: #fff;
+}
+.ArticleEquipementsPresta{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 100%;
+}
+
+
+.Equipements{
+    color: #FFFFFF;
+}
+
+.Equipements > h2{
+    background-color: #ffffff;
+    border: 1em solid #ffffff;
+    border-radius: 2em;
+    display: flex;
+    justify-content: center;
+    color: #277AB9;
+}
+.Equipements>div{
+    background-color: #277AB9;
+    border-radius: 10px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 1em solid #277AB9;
+    border-radius: 2em;
+    position: relative;
+    bottom: 1.25em;
+}
+
+.Equipements > div>ul{
+    border: 1em solid #277AB9;
+    border: 1em solid #FFFF;
+    border-radius: 2em;
+}
+
+.Equipements > div > div {
+    width: 90%;
+}
+
+.Equipements > div>.ColorGreenUl{
+    background-color: #2BF43F;
+    
+}
+
+.ColorGreenUl{
+color: black;
+background-color: #2BF43F;
+border: 1em solid #2BF43F;
+border-radius: 2em;
+}
+
+.ColorRedUl{
+background-color: #FF3838;
+border: 1em solid #FF3838;
+border-radius: 2em;
+}
+
+.Presta{
+color: white;
+
+}
+.Presta >h2{
+    background-color: #277AB9;
+    border: 1em solid #277AB9;
+    border-radius: 2em;
+    color: #277AB9;
+    display: flex;
+    justify-content: center;
+    color: #FFFFFF;
+}
+.Presta>div{
+    background-color: #ffffff;
+    border-radius: 10px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 1em solid #FFFF;
+    border-radius: 2em;
+    position: relative;
+    bottom: 1.25em;
+}
+.Presta >div>ul{
+    background-color: #277AB9;
+    border: 1em solid #FFFF;
+    border-radius: 2em;
+}
+.Presta> div>.ColorGreenUl{
+    background-color: #2BF43F;
+    
+
+}
+
+.Presta>div>.ColorRedUl{
+    background-color: #FF3838;
+    
+}
+.ArticleAvantagesPeriode > div, .ArticleEquipementsPresta > div{
+    margin: 10px 25px;
+}  
+
+@media screen and (max-width: 1100px){
+    .MenuDetail {
+        flex-wrap: wrap;
+    }
+
+    .MenuDetail > .carrousel {
+        margin-top: 2em;
+        flex-basis: 100%;
+    }
+
+    .MenuDetail > .carrousel {
+        margin-right: 2em;
+    }
+
+    .ArticleResume  > div{
+        width: calc(100% - 2em);
+    }
+
+    .BoutonReserver{
+        order: 10;
+    }
+
+    .InfoDuSejour > div{
+        width: 95%;
+    }
+
+    .MenuDetail > .carrousel > .bouton_carrousel{
+        top: 35%;
+    }
+}
+
