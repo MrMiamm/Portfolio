@@ -1,0 +1,59 @@
+/*****************************************************/
+/*Main Things*/
+*{
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+}
+
+body{
+    position: absolute;
+    top: 0;
+    width: 100%;
+    overflow-x: hidden;
+}
+
+::selection{
+    background-color: #23272a;
+    color: #fff;
+}
+
+section{
+    display: flex;
+    align-items: center;
+    height: 100vh;
+    justify-content: center;
+}
+
+h1{
+    font-size: 64px;
+    font-family: "NoirProLight", Arial, sans-serif;
+    color: #fff;
+}
+
+ul{
+    list-style: none;
+}
+
+/*****************************************************/
+/*Lenis*/
+
+html.lenis {
+    height: auto;
+}
+  
+.lenis.lenis-smooth {
+    scroll-behavior: auto;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+    overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+    overflow: hidden;
+}
+
+.lenis.lenis-scrolling iframe {
+    pointer-events: none;
+}
