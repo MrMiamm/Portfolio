@@ -283,11 +283,13 @@ input{
     flex-wrap: wrap;
     gap: 1em;
     z-index: 1;
+    padding-top: 6em;
     --angle: 135deg;
     --col1: 0%;
     background-image: linear-gradient(var(--angle),#0fc2e3 var(--col1), blue);
     width: 100%;
-    min-height: 90vh;
+    min-height: calc(90vh - 6em);
+    height: fit-content;
     border-radius: 0% 0% 30% 30% / 0% 0% 30% 30% ;
     box-shadow: inset 0px -3px 300px #00000090;
     transition: all .5s ease-in;
@@ -323,7 +325,7 @@ input{
     font-family: "NoirPro", Arial, sans-serif;
 }
 
-#accueil > div > div:hover, #accueil img:hover{
+#accueil > div > div:hover{
     filter: drop-shadow(-3px -3px 2px #ffffff90)
             drop-shadow(1px 1px 1px #ffffff50);
     transform: translateY(1px);
@@ -337,6 +339,16 @@ input{
     filter: drop-shadow(3px 3px 2px #00000090)
             drop-shadow(-1px -1px 1px #ffffff50);
     transition: all 500ms ease;
+}
+
+#accueil img:hover{
+    filter: drop-shadow(-3px -3px 2px #ffffff90);
+    transform: translateY(1px);
+}
+
+#accueil nav{
+    width: fit-content;
+    align-self: center;
 }
 
 #accueil nav ul{
@@ -360,13 +372,7 @@ input{
     }
 }
 
-@media screen and (max-width: 1253px){
-    #accueil img{
-        margin-top: 4em;
-    }
-}
-
-@media screen and (max-width: 1000px){
+@media screen and (max-width: 1280px){
     #accueil{
         border-radius: 0;
         height: fit-content;
