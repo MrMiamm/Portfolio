@@ -60,6 +60,8 @@ html.lenis {
 
 section{
     padding: 6em 4em;
+    padding-bottom: 10vw;
+    position: relative;
     color: #fff;
     background-image: linear-gradient(135deg,#0fc2e3,blue);
     background-repeat: no-repeat;
@@ -179,6 +181,7 @@ h2{
         height: fit-content;
         padding: 0;
         padding-top: 6em;
+        padding-bottom: 10vw;
     }
 
     h1{
