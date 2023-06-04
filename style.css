@@ -37,7 +37,6 @@ body{
     top: 0;
     background-color: #23272a;
     width: 100%;
-    min-height: 100vh;
     overflow-x: hidden;
 }
 
@@ -46,6 +45,10 @@ body{
     width: 0;
     margin: 0;
     padding: 0;
+}
+
+section{
+    overflow: hidden;
 }
 
 ::selection{
@@ -287,6 +290,7 @@ input{
     gap: 1em;
     z-index: 1;
     padding-top: 6em;
+    margin: 0;
     --angle: 135deg;
     --col1: 0%;
     background-image: linear-gradient(var(--angle),#0fc2e3 var(--col1), blue);
@@ -297,11 +301,20 @@ input{
     transition: all .5s ease-in;
 }
 
+@keyframes anim_div_accueil {
+    from{
+        opacity: 0;
+        display: none;
+    }
+}
+
 #accueil > div{
     display: flex;
     flex-direction: column;
     width: fit-content;
+    margin-bottom: 10vh;
     gap: 1em;
+    animation: anim_div_accueil 2s ease 1;
 }
 
 #accueil > div > div{
@@ -333,14 +346,24 @@ input{
     transform: translateY(1px);
 }
 
+@keyframes anim_accueil_img {
+    from{
+        border-radius: 0%;
+        scale: 0;
+        opacity: 0;
+    }
+}
+
 #accueil img{
     display: block;
     border-radius: 50%;
     height: 30em;
     width: 30em;
+    margin-bottom: 10vh;
     filter: drop-shadow(3px 3px 2px #00000090)
             drop-shadow(-1px -1px 1px #ffffff50);
     transition: all 500ms ease;
+    animation: anim_accueil_img 500ms ease 1;
 }
 
 #accueil img:hover{
@@ -363,7 +386,7 @@ input{
     gap: 1em;
 }
 
-@media screen and (max-width: 1412px){
+@media screen and (max-width: 1500px){
     #accueil nav ul{
         justify-content: center;
     }
@@ -374,14 +397,10 @@ input{
     }
 }
 
-@media screen and (max-width: 1280px){
+@media screen and (max-width: 1350px){
     #accueil{
         border-radius: 0;
         height: fit-content;
-    }
-
-    #accueil nav{
-        margin-bottom: 1em;
     }
 }
 
@@ -393,9 +412,8 @@ input{
 }
 
 @media screen and (max-width: 500px){
-    #accueil img{
-        width: 10em;
-        height: 10em;
+    #accueil div{
+        margin-top: -1em;
     }
 }
 
@@ -431,24 +449,6 @@ input{
                 10px 10px 80px #1db68b90;
 }
 
-.competences article::after, .formations article::after{
-    content: " ";
-    position: absolute;
-    top: -20px;
-    left: -10px;
-    background: linear-gradient(45deg, #1af4b7, #1db68b);
-    border-radius: 28px;
-    width: 100%;
-    height: 100%;
-    z-index: -1;
-    transition: ease-in 500ms all;
-}
-
-.competences article:hover::after, .formations article:hover::after{
-    top: 10px;
-    left: 20px;
-}
-
 .competences article:hover, .formations article:hover{
     box-shadow: 0px 0px 20px #1db68b90,
                 0px 0px 80px #1db68b90,
@@ -461,13 +461,8 @@ input{
         margin: .5em;
     }
 
-    .competences article:hover, .formations article:hover{
-        margin: .5em;
-    }
-
-    .competences article:hover::after, .formations article:hover::after{
-        top: 0;
-        left: 0;
+    .competences article:nth-child(4){
+        margin-bottom: 6em;
     }
 }
 
@@ -492,6 +487,7 @@ input{
     padding: 6em 4em;
     z-index: 3;
     height: 100vh;
+    background-color: #23272a;
 }
 
 .competences h1{
@@ -524,19 +520,6 @@ input{
 @media screen and (max-width: 1000px){
     .competences{
         height: auto;
-    }
-
-    .competences article{
-        margin: .5em;
-    }
-
-    .competences article:hover{
-        margin: .5em;
-    }
-
-    .competences article:hover::after{
-        top: 0;
-        left: 0;
     }
 }
 
@@ -592,28 +575,9 @@ input{
     margin-top: 10%;
 }
 
-.formations > div > article+article > div::after{
-    content: " ";
-    position: absolute;
-    top: -113.5%;
-    left: 50%;
-    background: linear-gradient(45deg, #1af4b7, #1db68b);
-    border-radius: 28px;
-    width: 10px;
-    height: 115%;
-    z-index: -2;
-}
-
 @media screen and (max-width: 1000px){
     .formations{
         border-radius: 0;
-    }
-}
-
-@media screen and (max-width: 900px){
-    .formations > div > article+article > div::after{
-        top: -50%;
-        height: 55%;
     }
 }
 
@@ -695,7 +659,7 @@ input{
     left: 0;
     width: 200%;
     height: 15vw;
-    overflow: hidden;
+    max-height: 15%;
     line-height: 0;
     fill: #23272A;
     filter: drop-shadow(-3px -3px 30px #00000090);
@@ -708,7 +672,6 @@ input{
     left: 0;
     width: 200%;
     height: 10vw;
-    overflow: hidden;
     line-height: 0;
     fill: #23272A;
     filter: drop-shadow(3px 3px 30px #00000090);

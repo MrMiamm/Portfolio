@@ -62,10 +62,6 @@ const lenis = new Lenis({
     wheelMultiplier: 0.8
 });
 
-lenis.on('scroll', (e) => {
-    console.log("caca");
-});
-
 function raf(time) {
     lenis.raf(time);
     requestAnimationFrame(raf);
@@ -87,19 +83,24 @@ gsap.from("#contact > div", {
 
 gsap.from(".projet", {
     scrollTrigger: {
-      trigger: ".projet",
+      trigger: ".projets",
       scrub: true,
       start: "top center",
-      end: "bottom bottom"
+      end: "+=400 center"
     },
     opacity: 0,
+    rotation: 1,
     x: -15
 });
 
-gsap.to("#contact > div, .projet", {
-    opacity: 1,
-    x: 0,
-    stagger: 0.8
+gsap.from(".projets", {
+    scrollTrigger: {
+      trigger: ".projets",
+      scrub: true,
+      start: "top+=10% center",
+      end: "center-=10% center"
+    },
+    opacity: 0
 });
 
 gsap.to("#accueil", {
@@ -110,3 +111,78 @@ gsap.to("#accueil", {
     repeat: -1,
     ease: "none"
 });
+
+/*Home buttons animation*/
+gsap.from("#accueil_content > nav > ul", {
+    y: 20,
+    opacity: 0
+});
+
+gsap.to("#accueil_content > nav > ul", {
+    y: 0,
+    opacity: 1,
+    stagger: 0.6,
+    duration: 1,
+    ease: "none"
+});
+
+gsap.utils.toArray("h1").forEach(h1 => {
+    gsap.from(h1, {
+        scrollTrigger: {
+            trigger: h1,
+            scrub: true,
+            start: "top center",
+            end: "+=200 center"
+          },
+        opacity: 0,
+        x: -10,
+        ease: "none"
+    });
+});
+gsap.utils.toArray(".competences article, .formations article").forEach(article => {
+    gsap.from(article, {
+        scrollTrigger: {
+            trigger: article.parentNode,
+            scrub: true,
+            start: "top center",
+            end: "+=200 center"
+          },
+        boxShadow: "none",
+        ease: "none"
+    });
+    
+    gsap.from(article, {
+        scrollTrigger: {
+            trigger: article.parentNode,
+            scrub: true,
+            start: "top+=10% center",
+            end: "top+=15% center"
+          },
+        opacity: 0,
+        ease: "none"
+    });
+});
+
+gsap.to("#accueil > img, #accueil > div", {
+    scrollTrigger: {
+        trigger: ".competences",
+        scrub: true,
+        start: "-100 center",
+        end: "+=300 center"
+      },
+    y: -500,
+    ease: "none"
+});
+
+gsap.to("#accueil > .wave_accueil", {
+    scrollTrigger: {
+        trigger: ".competences",
+        scrub: true,
+        start: "-100 center",
+        end: "+=300 center"
+      },
+    y: 50,
+    ease: "none"
+});
+
+
