@@ -233,7 +233,6 @@ gsap.from(".details > div:nth-child(2)", {
     scrollTrigger: {
         trigger: ".details",
         scrub: true,
-        markers: true,
         start: "-300 center",
         end: "top center"
       },

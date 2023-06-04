@@ -672,6 +672,7 @@ input{
     left: 0;
     width: 200%;
     height: 10vw;
+    max-height: 10vh;
     line-height: 0;
     fill: #23272A;
     filter: drop-shadow(3px 3px 30px #00000090);

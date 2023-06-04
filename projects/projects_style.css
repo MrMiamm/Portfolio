@@ -68,7 +68,7 @@ section{
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
-    height: 135vh;
+    height: calc(100% + 10vw + 50vh);
     box-shadow: inset 0px -3px 300px #00000090;
 }
 
