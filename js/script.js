@@ -52,6 +52,14 @@ function downloadAll(urls) {
 }
 
 /**************************************************************************/
+/*Reload la page à chaque fois qu'on resize la page*/
+
+window.addEventListener('resize', function () { 
+    "use strict";
+    window.location.reload(); 
+});
+
+/**************************************************************************/
 /*Animations*/
 
 gsap.registerPlugin(ScrollTrigger);
@@ -97,8 +105,8 @@ gsap.from(".projets", {
     scrollTrigger: {
       trigger: ".projets",
       scrub: true,
-      start: "top+=10% center",
-      end: "center-=10% center"
+      start: "top center",
+      end: "top+=15% center"
     },
     opacity: 0
 });
@@ -145,7 +153,7 @@ gsap.utils.toArray(".competences article, .formations article").forEach(article 
             trigger: article.parentNode,
             scrub: true,
             start: "top center",
-            end: "+=200 center"
+            end: "+=50 center"
           },
         boxShadow: "none",
         ease: "none"
@@ -185,4 +193,51 @@ gsap.to("#accueil > .wave_accueil", {
     ease: "none"
 });
 
+gsap.from("#the_project > h1", {
+    x: -10,
+    opacity: 0,
+    ease: "none"
+});
 
+gsap.to("#the_project > h1", {
+    x: 0,
+    opacity: 1,
+    duration: 0.5,
+    ease: "none"
+});
+
+gsap.timeline()
+.from(".content", {
+    scale: 0,
+    opacity: 0,
+    duration: 1.5,
+    ease: "none"
+}).from(".content > div", {
+    opacity: 0,
+    duration: 1.5,
+    ease: "none"
+});
+
+gsap.from(".details > div:nth-child(1)", {
+    scrollTrigger: {
+        trigger: ".details",
+        scrub: true,
+        start: "-300 center",
+        end: "top center"
+      },
+    x: -100,
+    opacity: 0,
+    ease: "none"
+});
+gsap.from(".details > div:nth-child(2)", {
+    scrollTrigger: {
+        trigger: ".details",
+        scrub: true,
+        markers: true,
+        start: "-300 center",
+        end: "top center"
+      },
+    x: 100,
+    opacity: 0,
+    ease: "none"
+});
