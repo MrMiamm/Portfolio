@@ -54,10 +54,7 @@ function downloadAll(urls) {
 /**************************************************************************/
 /*Reload la page à chaque fois qu'on resize la page*/
 
-window.addEventListener('resize', function () { 
-    "use strict";
-    window.location.reload(); 
-});
+
 
 /**************************************************************************/
 /*Animations*/
@@ -94,10 +91,11 @@ gsap.from(".projet", {
       trigger: ".projets",
       scrub: true,
       start: "top center",
-      end: "+=400 center"
+      end: "+=300 center"
     },
     opacity: 0,
-    rotation: 1,
+    stagger: 0.5,
+    clearProps:"all",
     x: -15
 });
 
@@ -163,7 +161,7 @@ gsap.utils.toArray(".competences article, .formations article").forEach(article 
         scrollTrigger: {
             trigger: article.parentNode,
             scrub: true,
-            start: "top+=10% center",
+            start: "top-=10% center",
             end: "top+=15% center"
           },
         opacity: 0,
@@ -239,4 +237,28 @@ gsap.from(".details > div:nth-child(2)", {
     x: 100,
     opacity: 0,
     ease: "none"
+});
+
+gsap.utils.toArray(".sur-moi-content").forEach(article => {
+    gsap.from(article, {
+        scrollTrigger: {
+          trigger: article,
+          scrub: true,
+          start: "top-=50% center",
+          end: "center-=50% center"
+        },
+        opacity: 0,
+        x: -1500,
+        y: 0
+    });
+
+    gsap.from(article, {
+        scrollTrigger: {
+          trigger: article,
+          scrub: true,
+          start: "center+=50% center",
+          end: "bottom+=50% center"
+        },
+        opacity: 1,
+    });
 });

@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="../style.css">
-    <link rel="stylesheet" type="text/css" href="qui_je_suis.css">
+    <link rel="stylesheet" type="text/css" href="style.css">
     <link rel="stylesheet" type="text/css" href="../stylesheet/buttons.css">
     <link rel="icon" href="../img/ma_photo.png">
     <title>Qui suis-je ?</title>
@@ -20,10 +20,10 @@
                 <span></span>
             </label>
             <ul>
-                <li><a class="pagelink" href="../index.html#accueil" onfocus="lenis.scrollTo('../index.html#accueil')">Accueil</a></li>
-                <li><a class="pagelink" href="../index.html#gotoCompetences" onfocus="lenis.scrollTo('../index.html#gotoCompetences')">Compétences</a></li>
-                <li><a class="pagelink" href="../index.html#gotoFormations" onfocus="lenis.scrollTo('../index.html#gotoFormations')">Formations</a></li>
-                <li><a class="pagelink" href="../index.html#gotoProjets" onfocus="lenis.scrollTo('../index.html#gotoProjets')">Projets</a></li>
+                <li><a class="pagelink" href="../" onfocus="lenis.scrollTo('../index.html#accueil')">Accueil</a></li>
+                <li><a class="pagelink" href="../#gotoCompetences" onfocus="lenis.scrollTo('../index.html#gotoCompetences')">Compétences</a></li>
+                <li><a class="pagelink" href="../#gotoFormations" onfocus="lenis.scrollTo('../index.html#gotoFormations')">Formations</a></li>
+                <li><a class="pagelink" href="../#gotoProjets" onfocus="lenis.scrollTo('../index.html#gotoProjets')">Projets</a></li>
                 <li><a class="pagelink" href="#contact" onfocus="lenis.scrollTo('#contact')">Contact</a></li>
             </ul>
         </nav>
@@ -32,8 +32,26 @@
             <a href="https://fr.linkedin.com/in/william-cheron-0b4a70269" target="_blank"><img src="../icons/linkedin.svg" alt="Linkedin"></a>
         </nav>
     </header>
-    <section> 
-        <h1>Page en construction</h1>
+    <section id="en-savoir-plus-sur-moi"> 
+        <h1>En savoir plus sur moi</h1>
+
+        <article class="sur-moi-content">
+            <div>
+                <h2>Ce que j'aime dans le développement</h2>
+                <p>blablablablablablablablablablablablablablablablablablablablablablablablabla</p>
+            </div>
+            
+        </article>
+        <article class="sur-moi-content">
+            <div>
+                <h2>Ce que j'aime d'autre</h2>
+                <p>blablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablabla</p>
+            </div> 
+        </article>
+
+        <svg class="wave_bottom" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+            <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" class="shape-fill"></path>
+        </svg>
     </section>
 
     <footer id="contact">
@@ -54,7 +72,8 @@
     </footer>
     <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1/bundled/lenis.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.11/dist/gsap.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/gsap@3.11/dist/ScrollTrigger.js"></script>
+    <script src="https://assets.codepen.io/16327/ScrollTrigger.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.4.2/CSSRulePlugin.js"></script>
     <script type="text/javascript" src="../js/script.js"></script>
 </body>
 </html>

@@ -56,6 +56,24 @@ section{
     color: #fff;
 }
 
+@keyframes anim_article_reverse {
+    from{
+        top: -5px;
+    } 
+    to{
+        top: 0;
+    }
+}
+
+@keyframes anim_article {
+    from{
+        top: 0;
+    } 
+    to{
+        top: -5px;
+    }
+}
+
 /*****************************************************/
 /*Lenis*/
 
@@ -444,12 +462,16 @@ input{
     padding: 1em;
     min-width: 18%;
     transition: ease-in 500ms all;
+    overflow-wrap: break-word;
+    animation: anim_article_reverse .5s ease 1;
     box-shadow: 10px 10px 10px #1db68b90,
                 10px 10px 40px #1db68b90,
                 10px 10px 80px #1db68b90;
 }
 
 .competences article:hover, .formations article:hover{
+    animation: anim_article .5s ease 1;
+    top: -5px;
     box-shadow: 0px 0px 20px #1db68b90,
                 0px 0px 80px #1db68b90,
                 0px 0px 160px #1db68b90;
@@ -624,11 +646,13 @@ input{
     text-align: center;
     box-shadow: 0px 10px 50px #00000090;
     transition: all .5s ease-in;
+    animation: anim_article_reverse .5s ease 1;
 }
 
 .projet:hover{
-    box-shadow: 0 0 20px #00000090;
-    transform: translateY(-1px);
+    animation: anim_article .5s ease 1;
+    top: -5px;
+    box-shadow: 0px 10px 20px 2px rgba(0, 0, 0, 0.25);
 }
 
 .projet h2{
