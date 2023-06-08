@@ -24,7 +24,7 @@ for(var i=0; i<elements.length; i++){
 }
 
 /**************************************************************************/
-/*Fermer le menu burger lorsqu'on appuie un bouton du menu*/
+/*Télécharger plusieurs fichiers */
 
 var links = [
     '../resources/create_transmusicales.sql',
@@ -103,7 +103,7 @@ gsap.from(".projets", {
     scrollTrigger: {
       trigger: ".projets",
       scrub: true,
-      start: "top center",
+      start: "top-=15% center",
       end: "top+=15% center"
     },
     opacity: 0
@@ -133,17 +133,25 @@ gsap.to("#accueil_content > nav > ul", {
 });
 
 gsap.utils.toArray("h1").forEach(h1 => {
-    gsap.from(h1, {
-        scrollTrigger: {
-            trigger: h1,
-            scrub: true,
-            start: "top center",
-            end: "+=200 center"
-          },
-        opacity: 0,
-        x: -10,
-        ease: "none"
-    });
+    if (h1.id == "toph1"){
+        gsap.from(h1, {
+            opacity: 0,
+            x: -10,
+            ease: "none"
+        });
+    } else{
+        gsap.from(h1, {
+            scrollTrigger: {
+                trigger: h1,
+                scrub: true,
+                start: "top center",
+                end: "+=200 center"
+              },
+            opacity: 0,
+            x: -10,
+            ease: "none"
+        });
+    }
 });
 gsap.utils.toArray(".competences article, .formations article").forEach(article => {
     gsap.from(article, {
@@ -238,27 +246,49 @@ gsap.from(".details > div:nth-child(2)", {
     opacity: 0,
     ease: "none"
 });
-
+i = 0;
 gsap.utils.toArray(".sur-moi-content").forEach(article => {
     gsap.from(article, {
         scrollTrigger: {
-          trigger: article,
-          scrub: true,
-          start: "top-=50% center",
-          end: "center-=50% center"
-        },
-        opacity: 0,
-        x: -1500,
-        y: 0
+            trigger: article,
+            scrub: true,
+            start: "bottom center",
+            end: "bottom+=50% center"
+          },
+          opacity: 1,
     });
+    if ((i > 0) && (i % 2 == 1)){
+        gsap.from(article, {
+            scrollTrigger: {
+              trigger: article,
+              scrub: true,
+              start: "top-=50% center",
+              end: "center-=50% center"
+            },
+            opacity: 0,
+            x: "-50%",
+            y: 0
+        });
+    } else if ((i > 0) && (i % 2 == 0)) {
+        gsap.from(article, {
+            scrollTrigger: {
+              trigger: article,
+              scrub: true,
+              start: "top-=50% center",
+              end: "center-=50% center"
+            },
+            opacity: 0,
+            x: "50%",
+            y: 0
+        });
+    } else{
+        gsap.from(article, {
+            opacity: 0,
+            x: "50%",
+            y: 0
+        });
+    }
 
-    gsap.from(article, {
-        scrollTrigger: {
-          trigger: article,
-          scrub: true,
-          start: "center+=50% center",
-          end: "bottom+=50% center"
-        },
-        opacity: 1,
-    });
+    
+    i++;
 });
