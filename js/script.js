@@ -26,24 +26,34 @@ for(var i=0; i<elements.length; i++){
 /**************************************************************************/
 /*Télécharger plusieurs fichiers */
 
-var links = [
+var links_bdd = [
     '../resources/create_transmusicales.sql',
     '../resources/Diagramme de classe UML.pdf'
 ];
 
-var links_name = [
+var links_capgemini = [
+    '../resources/Diaporama_Capgemini.pdf',
+    '../resources/Dossier_etude_Capgemini.pdf'
+];
+
+var links_name_bdd = [
     'create_transmusicales.sql',
     'Diagramme de classe UML.pdf'
 ];
+
+var links_name_capgemini = [
+    'Diaporama_Capgemini.pdf',
+    'Dossier_etude_Capgemini.pdf'
+];
   
-function downloadAll(urls) {
+function downloadAll(urls, names) {
     var link = document.createElement('a');
     link.style.display = 'none';
 
     document.body.appendChild(link);
 
     for (var i = 0; i < urls.length; i++) {
-        link.setAttribute('download', links_name[i]);
+        link.setAttribute('download', names[i]);
         link.setAttribute('href', urls[i]);
         link.click();
     }
